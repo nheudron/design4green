@@ -11,16 +11,11 @@
 		
 		<header id="header" class="header">
 			<h1><a  href="index.php"><span class="titreMobile">Fragilité Numérique</span><img src="" class="logoMobile"></a></h1>
-			<!--<nav id="menu" class="menu">
-				<ul id="navbar" class="navbar">
-					<li><a href="buy.php">Buy</a></li><li><a href="rent.php" >Rent</a></li><li><a href="sale.php">Sale</a></li><li><a href="#contact" class="mediumScreen">Contact</a></li><li><a id="accountButton" href="#deroulant" class="account"><i class="fa fa-user-circle fa-2x"></i></a></li>
-				</ul>
-			</nav>-->
 		</header>
 
 		<main>
-
 			<section class="blocks">
+
 				<h1>Indice de Fragilité Numérique</h1>
 
 				<p>Cet outil permet la visualisation d'indices de fragilité numérique territoire par territoire. La fragilité numérique est identifiée sur des critères liés à l'accès au numérique et sur le niveau de compétences de chacun et chacun.
@@ -72,7 +67,7 @@
 </html>
 
 <?php 
-$servername = "146.59.196.29";
+$servername = "localhost";
 	$username = "debian";
 	$password = "XpyJqyYagNDn";
 	$dbname = "data";
