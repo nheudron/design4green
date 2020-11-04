@@ -20,7 +20,6 @@
 
 		<main>
 
-
 			<div class="blocks">
 				<h1>Indice de Fragilité Numérique</h1>
 
