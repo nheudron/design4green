@@ -1,0 +1,33 @@
+body
+{
+	margin: 0 8rem;
+}
+
+h1
+{
+	text-align: center;
+}
+
+h3
+{
+	margin: 0;	
+}
+
+p
+{
+	text-align: justify;
+}
+
+td
+{
+	padding: .5rem 4rem;
+}
+
+.blocks
+{
+	margin: 2rem 0;
+	border: 1px solid black;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 0 1.5rem 2px grey;
+}
