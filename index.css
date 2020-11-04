@@ -1,28 +1,107 @@
-body
-{
-	margin: 0 8rem;
+/* Basic -------------------------------------------------------------*/
+body, input, select, textarea {
+	color: black;
+	font-family: Product Sans, "Open Sans", Helvetica, sans-serif;
+	font-size: 15pt;
+	font-weight: normal;  /* pas en gras */
+	letter-spacing: 0.075em;
+	line-height: 1.65em;
+	margin: 0;
+	padding: 0;
+}
+body, section {
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+	color: inherit;
 }
 
-h1
-{
-	text-align: center;
+h1 {
+	font: inherit;
+	font-weight: 800;
+	font-size: 1.5em;
+}
+h2 {
+	font-size: 1.5em;
+	line-height: 1.75em;
+}
+h3 {
+	font-size: 1.25em;
+	line-height: 1.5em;
 }
 
-h3
-{
-	margin: 0;	
+li{
+	list-style: none;
 }
-
 p
 {
 	text-align: justify;
 }
-
-td
-{
-	padding: .5rem 4rem;
+button {
+  background-color: #EE6C6C;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
 }
 
+/* Header -------------------------------------------------------------*/
+.header {
+	position: fixed;
+	height: 60px;
+	line-height: 60px;
+	width: 100%;
+	background-color: #0D3280;
+	color: white;
+	z-index: 100;
+	top: 0;
+}
+
+.header h1 {
+	float: left;
+	font: inherit;
+	text-decoration: none;
+	margin: 0;
+}
+
+.header .logoMobile{
+	display: none; 
+}
+		
+.header h1 a{
+	border-bottom: 0;
+	display: inline-block;
+	height: inherit;
+	line-height: inherit;
+	text-decoration: inherit;
+	color: inherit;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.header h1:hover {
+	background-color: rgba(203,203,203,0.51);
+}
+
+.menu a:hover {
+	background-color: rgba(203,203,203,0.51);
+	border-radius: 50px;
+}
+
+.header a:hover ~ .circle {
+	color: black;
+}
+
+/* Main -------------------------------------------------------------*/
+main{
+	margin-top: 60px;
+}
 .blocks
 {
 	margin: 2rem 0;
