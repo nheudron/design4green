@@ -11,15 +11,9 @@
 		
 		<header id="header" class="header">
 			<h1><a  href="index.php"><span class="titreMobile">Fragilité Numérique</span><img src="" class="logoMobile"></a></h1>
-			<!--<nav id="menu" class="menu">
-				<ul id="navbar" class="navbar">
-					<li><a href="buy.php">Buy</a></li><li><a href="rent.php" >Rent</a></li><li><a href="sale.php">Sale</a></li><li><a href="#contact" class="mediumScreen">Contact</a></li><li><a id="accountButton" href="#deroulant" class="account"><i class="fa fa-user-circle fa-2x"></i></a></li>
-				</ul>
-			</nav>-->
 		</header>
 
 		<main>
-
 			<div class="blocks">
 				<h1>Indice de Fragilité Numérique</h1>
 
