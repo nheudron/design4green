@@ -35,6 +35,10 @@ h3 {
 li{
 	list-style: none;
 }
+td
+{
+	padding: .5rem 4rem;
+}
 p
 {
 	text-align: justify;
