@@ -20,7 +20,7 @@
 
 		<main>
 
-			<div class="blocks">
+			<section class="blocks">
 				<h1>Indice de Fragilité Numérique</h1>
 
 				<p>Cet outil permet la visualisation d'indices de fragilité numérique territoire par territoire. La fragilité numérique est identifiée sur des critères liés à l'accès au numérique et sur le niveau de compétences de chacun et chacun.
@@ -56,13 +56,30 @@
 
 				<h2>La méthode d'analyse</h2>
 				<p>Vous pouvez débuter par une analyse globale d'un territoire puis affiner pour vous concentrer sur les indicateurs liés à l'accès d'une part et ceux liés aux compétences d'autre part. Vous pouvez ensuite comparer des territoires (régions, départements, villes) en fonction de votre besoin.</p>
-			</div>
-			<div class="blocks">
+			</section>
+			<section class="blocks">
 				<h1>zone de recherche</h1>
-			</div>
-			<div class="blocks">
+				<form action="" method="post">
+					<input type="number" name="postalcode" placeholder="49000">
+					<button>Rechercher</button>
+				</form>/
+			</section>
+			<section class="blocks">
 				<h1>tableau de réponses</h1>
-			</div>
+			</section>
 		</main>
 	</body>
 </html>
+
+<?php 
+$servername = "146.59.196.29";
+	$username = "debian";
+	$password = "XpyJqyYagNDn";
+	$dbname = "data";
+
+	try {
+		$db = new PDO('mysql:host='.$servername.';dbname='.$dbname.';charset=utf8',$username,$password);
+	} catch (Exception $e) {
+		die('Error : '.$e->getMessage());
+	}
+?>

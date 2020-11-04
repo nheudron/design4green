@@ -114,3 +114,7 @@ main{
     padding: 1.5rem;
     box-shadow: 0 0 1.5rem 2px grey;
 }
+input[type=submit] {
+	background: none;
+	border: none;
+}
