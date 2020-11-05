@@ -78,7 +78,13 @@
 						$result2->execute(array($codepostale));
 					
 						if(isset($_POST['choixQuartier'])){
-							echo "l'id du quartier sélectionné est : " . $_POST['choixQuartier']. "et l'iris_code de la ville est : ". $_POST['choixVille'];
+							
+							$SQLville = $db->prepare('SELECT * FROM ville WHERE id LIKE ?');
+							$SQLville->execute(array($_POST['choixQuartier']));	
+							while ($data6 = $SQLville->fetch()){		
+								$choixVille = $data6['iris_code'];			
+							}
+							echo "l'id du quartier sélectionné est : " . $_POST['choixQuartier']." et l'iris_code de la ville est ".$choixVille;
 						}
 						elseif(isset($_POST['choixVille'])){ ?>
 							<?php $choixVille = $_POST['choixVille'];
@@ -98,7 +104,6 @@
 											<?php 
 											}?>
 										</select>
-										<input type="hidden" id="choixVille" id="choixVille" value=" <?php echo $choixVille ?>">
 										<button>Selectionner</button>
 									</form>
 							<?php }else{
