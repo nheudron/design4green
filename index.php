@@ -26,14 +26,11 @@
 
 		<main>
 			<section class="blocks">
-
-				<h1>Indice de Fragilité Numérique</h1>
-
-				<p>Cet outil permet la visualisation d'indices de fragilité numérique territoire par territoire. La fragilité numérique est identifiée sur des critères liés à l'accès au numérique et sur le niveau de compétences de chacun et chacun.
+				<p class="introduction">Cet outil permet la visualisation d'indices de fragilité numérique territoire par territoire. La fragilité numérique est identifiée sur des critères liés à l'accès au numérique et sur le niveau de compétences de chacun et chacun.
 
 				L'indice de fragilité numérique révèle les zones d'exclusion numérique sur un territoire donné. Cet outil permet, que vous soyez une commune, un département ou une région de comparer votre indice de fragilité numérique avec les autres territoires.</p>
 
-				<h2>Les quatre indicateurs de fragilité</h2>
+				<h2>Les 4 indicateurs de fragilité</h2>
 
 				<p>Les quatre indicateurs retenus permettent de créer une analyse globale s'appuyant sur l'accès d'une part (information, interfaces numériques) et sur les compétences d'autre part (utilisation d'une interface,compétences administratives).</p>
 
@@ -45,16 +42,16 @@
 							<p>Identifier des territoires mal couverts par une offre de service d'information ou des populations qui auront des difficultés à comprendre l'information.</p>
 						</td>
 						<td>
-							<img class="logo l4" src="images/logoPack1.png">
-							<h3>Accès aux interfaces numériques</h3>
-							<p>Identifier des territoires mal couverts par les réseaux ou dans lesquels des populations auront des difficultés financières à y accéder.</p>
+							<img class="logo l2" src="images/logoPack1.png">
+							<h3>Capacité d'usage des interfaces numériques</h3>
+							<p>Identifier des populations parmi lesquelles s'observe une fréquence d'illectronisme ou difficulté à utiliser internet.</p>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<img class="logo l2" src="images/logoPack1.png">
-							<h3>Capacité d'usage des interfaces numériques</h3>
-							<p>Identifier des populations parmi lesquelles s'observe une fréquence d'illectronisme ou difficulté à utiliser internet.</p>
+							<img class="logo l4" src="images/logoPack1.png">
+							<h3>Accès aux interfaces numériques</h3>
+							<p>Identifier des territoires mal couverts par les réseaux ou dans lesquels des populations auront des difficultés financières à y accéder.</p>
 						</td>
 						<td>
 							<img class="logo l1" src="images/logoPack1.png">
@@ -64,11 +61,9 @@
 					</tr>
 				</table>
 
-				<h2>La méthode d'analyse</h2>
-				<p>Vous pouvez débuter par une analyse globale d'un territoire puis affiner pour vous concentrer sur les indicateurs liés à l'accès d'une part et ceux liés aux compétences d'autre part. Vous pouvez ensuite comparer des territoires (régions, départements, villes) en fonction de votre besoin.</p>
 			</section>
-			<section class="blocks">
-				<h1>zone de recherche</h1>
+			<section class="blocks search">
+				<h1>Accédez aux indices de fragilité numérique de votre ville</h1>
 				<form action="" method="post">
 					<input type="number" name="postalcode" placeholder="49000">
 					<button>Rechercher</button>
