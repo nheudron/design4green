@@ -135,3 +135,11 @@ input[type=submit] {
 
 .l4 {
   object-position: -620px; }
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    background-color: #003280;
+    color: #fff;
+}
