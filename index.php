@@ -72,46 +72,18 @@
 			<section class="blocks">
 				<div>
 					<?php
-						$i = 0;
 						$codepostale = $_POST['postalcode'];
 						$result2 = $db->prepare('SELECT * FROM lien_codes_postaux WHERE Code_postal = ?');
 						$result2->execute(array($codepostale));
 					
-						if(isset($_POST['choixQuartier'])){
-							
-							$SQLville = $db->prepare('SELECT * FROM ville WHERE id LIKE ?');
-							$SQLville->execute(array($_POST['choixQuartier']));	
-							while ($data6 = $SQLville->fetch()){		
-								$choixVille = $data6['iris_code'];			
-							}
-							echo "l'id du quartier sélectionné est : " . $_POST['choixQuartier']." et l'iris_code de la ville est ".$choixVille;
-						}
-						elseif(isset($_POST['choixVille'])){ ?>
+
+						if(isset($_POST['choixVille'])){ ?>
 							<?php $choixVille = $_POST['choixVille'];
 							$choixVille .= '%';
 							$SQLville = $db->prepare('SELECT * FROM ville WHERE iris_code LIKE ?');
 							$SQLville->execute(array($choixVille));						
 
-							if($SQLville->rowCount() > 1){
-							 ?>
-									<form action="" method="POST">
-										<select name="choixQuartier" id="choixQuartier">
-											<?php
-											while ($data5 = $SQLville->fetch()){ ?>		
-													<option value="<?php echo $data5['id']; ?>">
-														<?php echo $data5['iris_name'];?>
-													</option>
-											<?php 
-											}?>
-										</select>
-										<button>Selectionner</button>
-									</form>
-							<?php }else{
-									
-									printResults($SQLville);
-								}
 						}else{
-							$i++;
 							if ($result2->rowCount() > 0) {?>
 								<form action="" method="POST">
 									<select name="choixVille" id="choixVille">
@@ -131,7 +103,7 @@
 									<button>Selectionner</button>
 								</form>
 								<?php 
-							}elseif($i > 1){
+							}elseif($result2->rowCount() == 0){
 								echo "Entrez un code postal valide.";
 							}
 						 }	
