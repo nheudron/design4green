@@ -116,12 +116,19 @@ input[type=submit] {
 
 /* Traitement packs d'icones-----------------------------------------*/
 .logo {
+<<<<<<< HEAD
   width: 160px;
+=======
+  width: 200px;
+>>>>>>> origin/master
   height: 200px;
   object-fit: cover;
   overflow: hidden; 
   float: left;
+<<<<<<< HEAD
 	margin-right: 10px;
+=======
+>>>>>>> origin/master
 }
 
 .l1 {
