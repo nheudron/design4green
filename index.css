@@ -108,7 +108,9 @@ input[type=submit] {
   width: 350px;
   height: 350px;
   object-fit: none;
-  overflow: hidden; }
+  overflow: hidden; 
+  float: left;
+}
 
 .l1 {
   object-position: left; }
