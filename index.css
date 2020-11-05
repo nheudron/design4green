@@ -37,7 +37,7 @@ li {
   list-style: none; }
 
 td {
-  padding: 0 2rem;
+  padding-right: 15px;;
   max-width: 20%;}
 
 p {
@@ -116,11 +116,12 @@ input[type=submit] {
 
 /* Traitement packs d'icones-----------------------------------------*/
 .logo {
-  width: 200px;
+  width: 160px;
   height: 200px;
   object-fit: cover;
   overflow: hidden; 
   float: left;
+	margin-right: 10px;
 }
 
 .l1 {

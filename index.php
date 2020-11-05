@@ -77,10 +77,10 @@
 						if ($result->rowCount() > 0) {
 							while ($data = $result->fetch()){ 
 					?>
-								<p> <?php echo $data['name']?></p>
+								<p> <?php /**echo $data['name']*/?></p>
 							<?php }
 						}else{
-							echo "Pas de données dans la table";
+							echo "Entrez un code postal valide.";
 						}
 						$result->closeCursor();
 					?>
@@ -89,44 +89,29 @@
 						$result2->execute(array($codepostale));
 						while ($data2 = $result2->fetch()){ 
 					?>
-							<p> <?php echo $data2['Nom_commune']. ' ' . $data2['Ligne_5']?></p>
+							<p> <?php echo $data2['Nom_commune']. ' ' . $data2['Ligne_5'] . 'code commune : ' . $data2['Code_commune_INSEE']?></p>
 					<?php }
 						$result2 ->closeCursor();
 					?>
 				</div>
 				
-			<h2>Aglomération</h2>
-				<p>Indice d'accès à l'information epci 1</p>
-				<p>Indice d'ACCÈS AUX INTERFACES NUMERIQUES epci 1</p>
-				<p>COMPETENCES ADMINISTATIVES epci 1</p>
-				<p>COMPÉTENCES NUMÉRIQUES / SCOLAIRES epci 1</p>
-				<p>GLOBAL ACCES epci 1</p>
-				<p>GLOBAL COMPETENCES epci 1</p>
-				<p>SCORE GLOBAL epci 1</p>
 			<h2>département</h2>
-				<p>Indice d'aCCES à L'INFORMATION departement 1</p>
-				<p>ACCÈS AUX INTERFACES NUMERIQUES departement 1</p>
-				<p>COMPETENCES ADMINISTATIVES departement 1</p>
-				<p>COMPÉTENCES NUMÉRIQUES / SCOLAIRES departement 1</p>
-				<p>GLOBAL ACCES departement 1</p>
-				<p>GLOBAL COMPETENCES  departement 1</p>
-				<p>SCORE GLOBAL departement 1</p>
+				<p>Indice d'accès à l'information</p>
+				<p>Indice d'accès aux interfaces numériques</p>
+				<p>Indice de compétences administratives</p>
+				<p>Indice de compétences numériques/scolaires</p>
+				<p>Indices d'Accès Global</p>
+				<p>Indice de Compétence Global</p>
+				<p>SCORE GLOBAL</p>
 			
 			<h2>Région</h2>
-				<p>ACCES A L'INFORMATION region * </p>
-				<p>ACCES A L'INFORMATION region 1 </p>
-				<p>ACCÈS AUX INTERFACES NUMERIQUES region *</p>
-				<p>ACCÈS AUX INTERFACES NUMERIQUES region 1</p>
-				<p>COMPETENCES ADMINISTATIVES region * </p>
-				<p>COMPETENCES ADMINISTATIVES region 1 </p>
-				<p>COMPÉTENCES NUMÉRIQUES / SCOLAIRES region *  </p>
-				<p>COMPÉTENCES NUMÉRIQUES / SCOLAIRES region 1  </p>
-				<p>GLOBAL ACCES region *</p>
-				<p>GLOBAL ACCES region 1</p>
-				<p>GLOBAL COMPETENCES region *  </p>
-				<p>GLOBAL COMPETENCES region 1  </p>
-				<p>SCORE GLOBAL region 1 </p>
-				<p>SCORE GLOBAL region * </p>
+				<p>Indice d'accès à l'information</p>
+				<p>Indice d'accès aux interfaces numériques</p>
+				<p>Indice de compétences administratives</p>
+				<p>Indice de compétences numériques/scolaires</p>
+				<p>Indices d'Accès Global</p>
+				<p>Indice de Compétence Global</p>
+				<p>SCORE GLOBAL</p>
 				
 			</section>
 		</main>
