@@ -37,24 +37,24 @@
 				<table>
 					<tr>
 						<td>
-							<img class="logo l3" src="images/logoPack1.png">
+							<img class="logo l3" src="images/logoPack1.jpg">
 							<h3>Accès à l'information</h3>
 							<p>Identifier des territoires mal couverts par une offre de service d'information ou des populations qui auront des difficultés à comprendre l'information.</p>
 						</td>
 						<td>
-							<img class="logo l2" src="images/logoPack1.png">
+							<img class="logo l2" src="images/logoPack1.jpg">
 							<h3>Capacité d'usage des interfaces numériques</h3>
 							<p>Identifier des populations parmi lesquelles s'observe une fréquence d'illectronisme ou difficulté à utiliser internet.</p>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<img class="logo l4" src="images/logoPack1.png">
+							<img class="logo l4" src="images/logoPack1.jpg">
 							<h3>Accès aux interfaces numériques</h3>
 							<p>Identifier des territoires mal couverts par les réseaux ou dans lesquels des populations auront des difficultés financières à y accéder.</p>
 						</td>
 						<td>
-							<img class="logo l1" src="images/logoPack1.png">
+							<img class="logo l1" src="images/logoPack1.jpg">
 							<h3>Compétences administratives</h3>
 							<p>Identifier des populations parmi lesquelles s'observent des difficultés à accomplir des procédures administratives.</p>
 						</td>
@@ -135,7 +135,7 @@
 								echo "Entrez un code postal valide.";
 							}
 						 }	
-						$result2 ->closeCursor();
+						$result2 -> closeCursor();
 					
 						function printResults($SQLville){
 							while($data4 = $SQLville->fetch()){ ?>
@@ -148,6 +148,20 @@
 						}
 					?>
 
+					<h2>indices de votre ville</h2>
+						<?php 
+						$maxValue = $minValue = $ecart = $seuil2 = $seuil3 = $seuil4 = $seuil5 = array();
+					
+						$SQLville = $db->prepare('SELECT * FROM indices WHERE iris_code LIKE ?');
+						$SQLville->execute(array($choixVille));
+						while($dataDept = $SQLville->fetch()){
+							
+						}
+					
+						
+						
+						$SQLville-> closeCursor();
+						?>
 					<h2>indices zone départementale</h2>
 						<?php
 						$maxValue = $minValue = $ecart = $seuil2 = $seuil3 = $seuil4 = $seuil5 = array();
@@ -191,7 +205,7 @@
 						$SQLReg = $db->prepare('SELECT * FROM regionE WHERE iris_code LIKE ?');
 						$SQLReg->execute(array($choixVille));
 						$dataReg = $SQLReg->fetch();
-
+					
 						$indice = array();
 						foreach ($dataReg as $key => $valDept)
 						{
