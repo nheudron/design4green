@@ -107,7 +107,7 @@ input[type=submit] {
 .logo {
   width: 200px;
   height: 200px;
-  object-fit: none;
+  object-fit: cover;
   overflow: hidden; 
   float: left;
 }
@@ -116,10 +116,10 @@ input[type=submit] {
   object-position: left; }
 
 .l2 {
-  object-position: -350px; }
+  object-position: -220px; }
 
 .l3 {
-  object-position: -700px; }
+  object-position: -425px; }
 
 .l4 {
   object-position: right; }
