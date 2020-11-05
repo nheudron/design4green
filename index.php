@@ -73,12 +73,14 @@
 				<div>
 					<?php
 						$codepostale = $_POST['postalcode'];
-					?>
-					<?php
 						$result2 = $db->prepare('SELECT * FROM lien_codes_postaux WHERE Code_postal = ?');
 						$result2->execute(array($codepostale));
 						if(isset($_POST['choixVille'])){
-								?> <p><?php echo $_POST['choixVille']; ?></p> <?php
+					?>
+
+					<p><?php echo $_POST['choixVille']; ?></p>
+
+					<?php
 							}
 						else{
 							if ($result2->rowCount() > 0) {?>
@@ -104,8 +106,6 @@
 								echo "Entrez un code postal valide.". $_POST(choixVille);
 							}
 						}
-						$result->closeCursor();?>
-							
 					<?php 	
 						$result2 ->closeCursor();
 					
