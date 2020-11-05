@@ -77,7 +77,7 @@
 						$result2->execute(array($codepostale));
 					
 						if(isset($_POST['choixQuartier'])){
-							printResults($_POST['SQLville']);
+							echo "bonsoir" . $_POST['choixQuartier'];
 						}
 						elseif(isset($_POST['choixVille'])){ ?>
 							<?php $choixVille = $_POST['choixVille'];
@@ -91,13 +91,12 @@
 										<select name="choixQuartier" id="choixQuartier">
 											<?php
 											while ($data5 = $SQLville->fetch()){ ?>		
-													<option value="<?php $data5['iris_code'].'.'.$data5['iris_name']; ?>">
+													<option value="<?php echo $data5['id']; ?>">
 														<?php echo $data5['iris_name'];?>
 													</option>
 											<?php 
 											}?>
 										</select>
-										<input type="hidden" name="SQLville" id="SQLville" value="<?php $SQLville ?>">
 										<button>Selectionner</button>
 									</form>
 							<?php }else{
@@ -132,9 +131,9 @@
 						function printResults($SQLville){
 							while($data4 = $SQLville->fetch()){ ?>
 								<?php if($data4['name'] == $data4['iris_name']){ ?>
-										<p> <?php echo "La ville est : ".$data4['name']?></p>
+										<p> <?php echo "La ville est : ".$data4['name']." identifiée par son iris_code : ".$data4['iris_code']?></p>
 								<?php }else{ ?>
-										<p> <?php echo "La ville est : ".$data4['name']." : ".$data4['iris_name']?></p>
+										<p> <?php echo "La ville est : ".$data4['name']." : ".$data4['iris_name']." identifiée par son iris_code : ".$data4['iris_code']?></p>
 								<?php } 
 							}
 						}
