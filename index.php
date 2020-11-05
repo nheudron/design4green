@@ -170,13 +170,13 @@
 							else $indice[$key] = 5;
 						}
 
-						if($key == 'ACCES_INFORMATION') 			echo "<p>Indice d'accès à l'information : " . $indice['ACCES_INFORMATION'] . "</p>";
-						if($key == 'ACCES_INTERFACES_NUMERIQUES')	echo "<p>Indice d'accès aux interfaces numériques : " . $indice['ACCES_INTERFACES_NUMERIQUES'] . "</p>";
-						if($key == 'COMPETENCES_ADMINISTRATIVES')	echo "<p>Indice de compétences administratives : " . $indice['COMPETENCES_ADMINISTRATIVES'] . "</p>";
-						if($key == 'COMPETENCES_SCOLAIRES')			echo "<p>Indice de compétences numériques/scolaires : " . $indice['COMPETENCES_SCOLAIRES'] . "</p>";
-						if($key == 'GLOBAL_ACCES')					echo "<p><br>Indices d'Accès Global : " . $indice['GLOBAL_ACCES'] . "</p>";
-						if($key == 'GLOBAL_COMPETENCES')			echo "<p>Indice de Compétence Global : " . $indice['GLOBAL_COMPETENCES'] . "</p>";
-						if($key == 'SCORE_GLOBAL')					echo "<p>SCORE GLOBAL : " . $indice['SCORE_GLOBAL'] . "</p>";
+						echo "<p>Indice d'accès à l'information : " . $indice['ACCES_INFORMATION'] . "</p>";
+						echo "<p>Indice d'accès aux interfaces numériques : " . $indice['ACCES_INTERFACES_NUMERIQUES'] . "</p>";
+						echo "<p>Indice de compétences administratives : " . $indice['COMPETENCES_ADMINISTRATIVES'] . "</p>";
+						echo "<p>Indice de compétences numériques/scolaires : " . $indice['COMPETENCES_SCOLAIRES'] . "</p>";
+						echo "<p><br>Indices d'Accès Global : " . $indice['GLOBAL_ACCES'] . "</p>";
+						echo "<p>Indice de Compétence Global : " . $indice['GLOBAL_COMPETENCES'] . "</p>";
+						echo "<p>SCORE GLOBAL : " . $indice['SCORE_GLOBAL'] . "</p>";
 						?>
 
 					<h2>indices zone régionale</h2>
@@ -206,13 +206,13 @@
 							else $indice[$key] = 5;
 						}
 
-						if($key == 'ACCES_INFORMATION') 			echo "<p>Indice d'accès à l'information : " . $indice['ACCES_INFORMATION'] . "</p>";
-						if($key == 'ACCES_INTERFACES_NUMERIQUES')	echo "<p>Indice d'accès aux interfaces numériques : " . $indice['ACCES_INTERFACES_NUMERIQUES'] . "</p>";
-						if($key == 'COMPETENCES_ADMINISTRATIVES')	echo "<p>Indice de compétences administratives : " . $indice['COMPETENCES_ADMINISTRATIVES'] . "</p>";
-						if($key == 'COMPETENCES_SCOLAIRES')			echo "<p>Indice de compétences numériques/scolaires : " . $indice['COMPETENCES_SCOLAIRES'] . "</p>";
-						if($key == 'GLOBAL_ACCES')					echo "<p><br>Indices d'Accès Global : " . $indice['GLOBAL_ACCES'] . "</p>";
-						if($key == 'GLOBAL_COMPETENCES')			echo "<p>Indice de Compétence Global : " . $indice['GLOBAL_COMPETENCES'] . "</p>";
-						if($key == 'SCORE_GLOBAL')					echo "<p>SCORE GLOBAL : " . $indice['SCORE_GLOBAL'] . "</p>";
+						echo "<p>Indice d'accès à l'information : " . $indice['ACCES_INFORMATION'] . "</p>";
+						echo "<p>Indice d'accès aux interfaces numériques : " . $indice['ACCES_INTERFACES_NUMERIQUES'] . "</p>";
+						echo "<p>Indice de compétences administratives : " . $indice['COMPETENCES_ADMINISTRATIVES'] . "</p>";
+						echo "<p>Indice de compétences numériques/scolaires : " . $indice['COMPETENCES_SCOLAIRES'] . "</p>";
+						echo "<p><br>Indices d'Accès Global : " . $indice['GLOBAL_ACCES'] . "</p>";
+						echo "<p>Indice de Compétence Global : " . $indice['GLOBAL_COMPETENCES'] . "</p>";
+						echo "<p>SCORE GLOBAL : " . $indice['SCORE_GLOBAL'] . "</p>";
 						?>
 				</div>
 			</section>
