@@ -175,7 +175,10 @@
 						{
 							if($minValue[$key] > $valDept || $minValue[$key] = '') $minValue[$key] = $valDept;
 							if($maxValue[$key] < $valDept || $maxValue[$key] = '') $maxValue[$key] = $valDept;
+						}
 
+						foreach ($dataDept as $key => $valDept)
+						{
 							$ecart[$key]	= $maxValue[$key] - $minValue[$key];
 							$seuil2[$key]	= $minValue[$key] + $ecart[$key];
 							$seuil3[$key]	= $minValue[$key] + $ecart[$key] * 2;
@@ -207,11 +210,14 @@
 						$dataReg = $SQLReg->fetch();
 					
 						$indice = array();
-						foreach ($dataReg as $key => $valDept)
+						foreach ($dataReg as $key => $valReg)
 						{
-							if($minValue[$key] > $valDept || $minValue[$key] = '') $minValue[$key] = $valDept;
-							if($maxValue[$key] < $valDept || $maxValue[$key] = '') $maxValue[$key] = $valDept;
+							if($minValue[$key] > $valReg || $minValue[$key] = '') $minValue[$key] = $valReg;
+							if($maxValue[$key] < $valReg || $maxValue[$key] = '') $maxValue[$key] = $valReg;
+						}
 
+						foreach ($dataReg as $key => $valReg)
+						{
 							$ecart[$key]	= $maxValue[$key] - $minValue[$key];
 							$seuil2[$key]	= $minValue[$key] + $ecart[$key];
 							$seuil3[$key]	= $minValue[$key] + $ecart[$key] * 2;
