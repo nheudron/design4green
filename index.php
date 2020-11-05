@@ -112,6 +112,11 @@
 						 //traitement pour récupérer code INSEE et ajouter un reg ex pour la fin
 					?>
 					
+					<?php 
+						$result4 = $db->prepare('SELECT acces_information, acces_interfaces_numeriques, competences_administratives, competences_scolaires, global_acces, global_competences, score_global FROM regionE WHERE iris_code LIKE ?');
+						$choixVille->execute(array($_POST['choixVille'],'%'))
+					?>
+
 					<?php $codeCommune = 690810102;
 						$result3 = $db->prepare('SELECT * FROM ville WHERE iris_code = ?');
 						$result3->execute(array($codeCommune));
