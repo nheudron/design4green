@@ -157,11 +157,11 @@
 							if($minValue[$key] > $valDept || $minValue[$key] = '') $minValue[$key] = $valDept;
 							if($maxValue[$key] < $valDept || $maxValue[$key] = '') $maxValue[$key] = $valDept;
 
-							$valEcart	= $maxValue[$key] - $minValue[$key];
-							$seuil2[$key]	= $minValue[$key] + $valEcart;
-							$seuil3[$key]	= $minValue[$key] + $valEcart * 2;
-							$seuil4[$key]	= $minValue[$key] + $valEcart * 3;
-							$seuil5[$key]	= $minValue[$key] + $valEcart * 4;
+							$ecart[$key]	= $maxValue[$key] - $minValue[$key];
+							$seuil2[$key]	= $minValue[$key] + $ecart[$key];
+							$seuil3[$key]	= $minValue[$key] + $ecart[$key] * 2;
+							$seuil4[$key]	= $minValue[$key] + $ecart[$key] * 3;
+							$seuil5[$key]	= $minValue[$key] + $ecart[$key] * 4;
 
 							if($valDept < $seuil2[$key]) $indice[$key] = 1;
 							else if($valDept < $seuil3[$key]) $indice[$key] = 2;
@@ -193,11 +193,11 @@
 							if($minValue[$key] > $valDept || $minValue[$key] = '') $minValue[$key] = $valDept;
 							if($maxValue[$key] < $valDept || $maxValue[$key] = '') $maxValue[$key] = $valDept;
 
-							$valEcart	= $maxValue[$key] - $minValue[$key];
-							$seuil2[$key]	= $minValue[$key] + $valEcart;
-							$seuil3[$key]	= $minValue[$key] + $valEcart * 2;
-							$seuil4[$key]	= $minValue[$key] + $valEcart * 3;
-							$seuil5[$key]	= $minValue[$key] + $valEcart * 4;
+							$ecart[$key]	= $maxValue[$key] - $minValue[$key];
+							$seuil2[$key]	= $minValue[$key] + $ecart[$key];
+							$seuil3[$key]	= $minValue[$key] + $ecart[$key] * 2;
+							$seuil4[$key]	= $minValue[$key] + $ecart[$key] * 3;
+							$seuil5[$key]	= $minValue[$key] + $ecart[$key] * 4;
 
 							if($valReg < $seuil2[$key]) $indice[$key] = 1;
 							else if($valReg < $seuil3[$key]) $indice[$key] = 2;
