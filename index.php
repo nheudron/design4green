@@ -20,18 +20,6 @@
 		}
 		?>
 		
-		<!--
-		<?php
-		require('fpdf/fpdf.php');
-		$pdf = new FPDF();
-		$pdf->AddPage();
-		$pdf->SetFont('Arial','B',16);
-		$pdf->Cell(40,10,'Hello World!');
-		$pdf->Output();
-		?>
-		-->
-
-		
 		<header id="header" class="header">
 			<h1><a  href=""><span class="titreMobile">Indice de Fragilité Numérique</span><img src="" class="logoMobile"></a></h1>
 		</header>
