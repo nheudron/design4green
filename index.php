@@ -161,7 +161,10 @@
 						{
 							if($minValue[$key] > $valDept || $minValue[$key] = '') $minValue[$key] = $valDept;
 							if($maxValue[$key] < $valDept || $maxValue[$key] = '') $maxValue[$key] = $valDept;
+						}
 
+						foreach ($dataDept as $key => $valDept)
+						{
 							$ecart[$key]	= $maxValue[$key] - $minValue[$key];
 							$seuil2[$key]	= $minValue[$key] + $ecart[$key];
 							$seuil3[$key]	= $minValue[$key] + $ecart[$key] * 2;
@@ -197,7 +200,10 @@
 						{
 							if($minValue[$key] > $valDept || $minValue[$key] = '') $minValue[$key] = $valDept;
 							if($maxValue[$key] < $valDept || $maxValue[$key] = '') $maxValue[$key] = $valDept;
+						}
 
+						foreach ($dataReg as $key => $valDept)
+						{
 							$ecart[$key]	= $maxValue[$key] - $minValue[$key];
 							$seuil2[$key]	= $minValue[$key] + $ecart[$key];
 							$seuil3[$key]	= $minValue[$key] + $ecart[$key] * 2;
