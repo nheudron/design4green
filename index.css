@@ -96,16 +96,14 @@ button {
 
 /* Main -------------------------------------------------------------*/
 main {
-  margin-top: 60px; }
+  margin: 2rem 3%;
+  padding: 1.5rem;}
 .introduction{
 	margin-bottom: 2rem;
 	background-color: #003280;
 	color: white;
 	padding: 1.5em;
 }
-.blocks {
-  margin: 2rem 3%;
-  padding: 1.5rem; }
 .search{
 	text-align: center;
 	
