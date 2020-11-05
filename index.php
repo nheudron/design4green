@@ -20,6 +20,7 @@
 		}
 		?>
 		
+		<!--
 		<?php
 		require('fpdf/fpdf.php');
 		$pdf = new FPDF();
@@ -28,6 +29,8 @@
 		$pdf->Cell(40,10,'Hello World!');
 		$pdf->Output();
 		?>
+		-->
+
 		
 		<header id="header" class="header">
 			<h1><a  href=""><span class="titreMobile">Indice de Fragilité Numérique</span><img src="" class="logoMobile"></a></h1>
