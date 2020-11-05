@@ -75,14 +75,22 @@
 						$codepostale = $_POST['postalcode'];
 						$result2 = $db->prepare('SELECT * FROM lien_codes_postaux WHERE Code_postal = ?');
 						$result2->execute(array($codepostale));
-						if(isset($_POST['choixVille'])){
-					?>
+					
+						if(isset($_POST['choixVille'])){ ?>
+							<?php $choixVille = $_POST['choixVille'];
+							$choixVille .= '%';
+							$SQLville = $db->prepare('SELECT * FROM ville WHERE iris_code LIKE ?');
+							$SQLville->execute(array($choixVille));						
+														
+							while($data4 = $SQLville->fetch()){ ?>
 
-					<p><?php echo $_POST['choixVille']; ?></p>
-
-					<?php
-							}
-						else{
+								<?php if($data4['name'] == $data4['iris_name']){ ?>
+											<p> <?php echo "La ville est : ".$data4['name']?></p>
+								<?php }else{ ?>
+										<p> <?php echo "La ville est : ".$data4['name']." : ".$data4['iris_name']?></p>
+								<?php } 
+							}												
+						}else{
 							if ($result2->rowCount() > 0) {?>
 								<form action="" method="POST">
 									<select name="choixVille" id="choixVille">
@@ -103,27 +111,12 @@
 								</form>
 								<?php
 							}else{
-								echo "Entrez un code postal valide.". $_POST(choixVille);
+								echo "Entrez un code postal valide.";
 							}
-						}
-					<?php 	
+						}	
 						$result2 ->closeCursor();
 					
 						 //traitement pour récupérer code INSEE et ajouter un reg ex pour la fin
-					?>
-					
-					<?php 
-						$result4 = $db->prepare('SELECT acces_information, acces_interfaces_numeriques, competences_administratives, competences_scolaires, global_acces, global_competences, score_global FROM regionE WHERE iris_code LIKE ?');
-						$choixVille->execute(array($_POST['choixVille'],'%'))
-					?>
-
-					<?php $codeCommune = 690810102;
-						$result3 = $db->prepare('SELECT * FROM ville WHERE iris_code = ?');
-						$result3->execute(array($codeCommune));
-						while($data3 = $result3->fetch()){ ?>
-							<p> <?php echo $data3['name']?></p>
-					<?php
-						}
 					?>
 				</div>
 				
