@@ -72,6 +72,7 @@
 			<section class="blocks">
 				<div>
 					<?php
+						$i = 0;
 						$codepostale = $_POST['postalcode'];
 						$result2 = $db->prepare('SELECT * FROM lien_codes_postaux WHERE Code_postal = ?');
 						$result2->execute(array($codepostale));
@@ -100,9 +101,11 @@
 										<button>Selectionner</button>
 									</form>
 							<?php }else{
+									
 									printResults($SQLville);
 								}
 						}else{
+							$i++;
 							if ($result2->rowCount() > 0) {?>
 								<form action="" method="POST">
 									<select name="choixVille" id="choixVille">
@@ -122,10 +125,10 @@
 									<button>Selectionner</button>
 								</form>
 								<?php
-							}else{
+							}elseif($i > 1){
 								echo "Entrez un code postal valide.";
 							}
-						}	
+						 }	
 						$result2 ->closeCursor();
 					
 						function printResults($SQLville){
