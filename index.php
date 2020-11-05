@@ -179,7 +179,7 @@
 
 					<h2>indices zone régionale</h2>
 						<?php
-						$SQLReg = $db->prepare('SELECT * FROM regionE WHERE iris_code LIKE ?');
+						$SQLReg = $db->prepare('SELECT * FROM region WHERE iris_code LIKE ?');
 						$SQLReg->execute(array($choixVille));
 						$dataReg = $SQLReg->fetch();
 
