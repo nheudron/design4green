@@ -63,6 +63,7 @@
 							<p>Identifier des populations parmi lesquelles s'observe une fréquence d'illectronisme ou difficulté à utiliser internet.</p>
 						</td>
 						<td>
+							<img class="logo l1" src="images/logoPack1.png">
 							<h3>Compétences administratives</h3>
 							<p>Identifier des populations parmi lesquelles s'observent des difficultés à accomplir des procédures administratives.</p>
 						</td>
@@ -82,21 +83,29 @@
 			<section class="blocks">
 				<div>
 					<?php
-						$codepostale = $_GET['postalcode'];
-						$result = $db->query('SELECT * FROM ville LIMIT 15;');
+						$codepostale = $_POST['postalcode'];
+						$result = $db->query('SELECT * FROM ville LIMIT 1;');
 						if ($result->rowCount() > 0) {
 							while ($data = $result->fetch()){ 
-								 ?>
-								<p> <?php echo $data['libcom']?></p>
-						<?php }
+					?>
+								<p> <?php echo $data['name']?></p>
+							<?php }
 						}else{
 							echo "Pas de données dans la table";
 						}
+						$result->closeCursor();
+					?>
+					<?php
+						$result2 = $db->prepare('SELECT * FROM lien_codes_postaux WHERE Code_postal = ?');
+						$result2->execute(array($codepostale));
+						while ($data2 = $result2->fetch()){ 
+					?>
+							<p> <?php echo $data2['Nom_commune']. ' ' . $data2['Ligne_5']?></p>
+					<?php }
+						$result2 ->closeCursor();
 					?>
 				</div>
 				
-				
-				<img class="logo l1" src="images/logoPack1.png">
 			<h2>Aglomération</h2>
 				<p>Indice d'accès à l'information epci 1</p>
 				<p>Indice d'ACCÈS AUX INTERFACES NUMERIQUES epci 1</p>
