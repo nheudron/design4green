@@ -161,7 +161,7 @@
 						</div>
 					</section>
 
-						<button type="button" onclick="<?php printPDF($dataVille, $dataDept, $dataReg) ?>">print PDF</button>
+						<button onclick="<?php printPDF($dataVille, $dataDept, $dataReg) ?>">print PDF</button>
 						<?php
 						function printPDF($dataVille, $dataDept, $dataReg)
 						{
