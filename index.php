@@ -30,7 +30,7 @@
 		?>
 		
 		<header id="header" class="header">
-			<h1><a  href="index.php"><span class="titreMobile">Fragilité Numérique</span><img src="" class="logoMobile"></a></h1>
+			<h1><a  href=""><span class="titreMobile">Indice de Fragilité Numérique</span><img src="" class="logoMobile"></a></h1>
 		</header>
 
 		<main>
@@ -49,16 +49,19 @@
 				<table>
 					<tr>
 						<td>
+							
 							<h3>Accès à l'information</h3>
 							<p>Identifier des territoires mal couverts par une offre de service d'information ou des populations qui auront des difficultés à comprendre l'information.</p>
 						</td>
 						<td>
+							
 							<h3>Accès aux interfaces numériques</h3>
 							<p>Identifier des territoires mal couverts par les réseaux ou dans lesquels des populations auront des difficultés financières à y accéder.</p>
 						</td>
 					</tr>
 					<tr>
 						<td>
+							
 							<h3>Capacité d'usage des interfaces numériques</h3>
 							<p>Identifier des populations parmi lesquelles s'observe une fréquence d'illectronisme ou difficulté à utiliser internet.</p>
 						</td>
