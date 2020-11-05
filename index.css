@@ -105,8 +105,8 @@ input[type=submit] {
 
 /* Traitement packs d'icones-----------------------------------------*/
 .logo {
-  width: 350px;
-  height: 350px;
+  width: 200px;
+  height: 200px;
   object-fit: none;
   overflow: hidden; 
   float: left;

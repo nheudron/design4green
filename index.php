@@ -52,19 +52,19 @@
 				<table>
 					<tr>
 						<td>
-							
+							<img class="logo l3" src="images/logoPack1.png">
 							<h3>Accès à l'information</h3>
 							<p>Identifier des territoires mal couverts par une offre de service d'information ou des populations qui auront des difficultés à comprendre l'information.</p>
 						</td>
 						<td>
-							
+							<img class="logo l4" src="images/logoPack1.png">
 							<h3>Accès aux interfaces numériques</h3>
 							<p>Identifier des territoires mal couverts par les réseaux ou dans lesquels des populations auront des difficultés financières à y accéder.</p>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							
+							<img class="logo l2" src="images/logoPack1.png">
 							<h3>Capacité d'usage des interfaces numériques</h3>
 							<p>Identifier des populations parmi lesquelles s'observe une fréquence d'illectronisme ou difficulté à utiliser internet.</p>
 						</td>
