@@ -73,25 +73,54 @@
 				<div>
 					<?php
 						$codepostale = $_POST['postalcode'];
-						$result = $db->query('SELECT * FROM ville LIMIT 1;');
-						if ($result->rowCount() > 0) {
-							while ($data = $result->fetch()){ 
-					?>
-								<p> <?php /**echo $data['name']*/?></p>
-							<?php }
-						}else{
-							echo "Entrez un code postal valide.";
-						}
-						$result->closeCursor();
+						
+						
 					?>
 					<?php
 						$result2 = $db->prepare('SELECT * FROM lien_codes_postaux WHERE Code_postal = ?');
 						$result2->execute(array($codepostale));
-						while ($data2 = $result2->fetch()){ 
-					?>
-							<p> <?php echo $data2['Nom_commune']. ' ' . $data2['Ligne_5'] . 'code commune : ' . $data2['Code_commune_INSEE']?></p>
-					<?php }
+						if(isset($_POST['choixVille'])){
+								?> <p><?php echo $_POST['choixVille']; ?></p> <?php
+							}
+						else{
+							if ($result2->rowCount() > 0) {?>
+								<form action="" method="POST">
+									<select name="choixVille" id="choixVille">
+									<?php
+									while ($data2 = $result2->fetch()){ ?>		
+											<option value="<?php echo $data2['Code_commune_INSEE']; ?>">
+												<?php if($data2['Ligne_5'] == ''){ 
+														echo $data2['Nom_commune'];
+													}else{
+														echo $data2['Ligne_5'];
+													}
+												?>
+											</option>
+									<?php
+									}?>
+									</select>
+									<button>Selectionner</button>
+								</form>
+								<?php
+							}else{
+								echo "Entrez un code postal valide.". $_POST(choixVille);
+							}
+						}
+						$result->closeCursor();?>
+							
+					<?php 	
 						$result2 ->closeCursor();
+					
+						 //traitement pour récupérer code INSEE et ajouter un reg ex pour la fin
+					?>
+					
+					<?php $codeCommune = 690810102;
+						$result3 = $db->prepare('SELECT * FROM ville WHERE iris_code = ?');
+						$result3->execute(array($codeCommune));
+						while($data3 = $result3->fetch()){ ?>
+							<p> <?php echo $data3['name']?></p>
+					<?php
+						}
 					?>
 				</div>
 				
