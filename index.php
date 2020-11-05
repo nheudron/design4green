@@ -141,5 +141,10 @@
 				</div>
 			</section>
 		</main>
+		<footer>
+        	<p>© 2020 Équipe NLN dans le cadre du Design4Green</p>
+        	<p>Site héberger sur un VPS par OVH</p>
+        	<p>Ce site ne collecte aucune information</p>
+    	</footer>
 	</body>
 </html>
