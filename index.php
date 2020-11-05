@@ -77,7 +77,7 @@
 						$result2->execute(array($codepostale));
 					
 						if(isset($_POST['choixQuartier'])){
-							echo "bonsoir" . $_POST['choixQuartier'];
+							echo "l'id du quartier sélectionné est : " . $_POST['choixQuartier'];
 						}
 						elseif(isset($_POST['choixVille'])){ ?>
 							<?php $choixVille = $_POST['choixVille'];
