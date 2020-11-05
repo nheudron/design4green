@@ -8,6 +8,27 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	</head>
 	<body>
+<?php 
+$servername = "localhost";
+	$username = "debian";
+	$password = "XpyJqyYagNDn";
+	$dbname = "data";
+
+	try {
+		$db = new PDO('mysql:host='.$servername.';dbname='.$dbname.';charset=utf8',$username,$password);
+	} catch (Exception $e) {
+		die('Error : '.$e->getMessage());
+	}
+?>
+		
+		<?php
+			$fichier = fopen('exemple2.txt', 'c+b');
+            fwrite($fichier, 'Un premier texte dans mon fichier');
+
+			if($fichier){
+				echo "Le fichier à été créé";
+			}
+				?>
 		
 		<header id="header" class="header">
 			<h1><a  href="index.php"><span class="titreMobile">Fragilité Numérique</span><img src="" class="logoMobile"></a></h1>
@@ -57,24 +78,48 @@
 				<form action="" method="post">
 					<input type="number" name="postalcode" placeholder="49000">
 					<button>Rechercher</button>
-				</form>/
+				</form>
 			</section>
 			<section class="blocks">
-				<h1>tableau de réponses</h1>
+				<?php
+					$codepostale = $_GET['postalcode'];
+					
+				?>
+				<img class="logo l1" src="images/logoPack1.png">
+			<h2>Aglomération</h2>
+				<p>Indice d'accès à l'information epci 1</p>
+				<p>Indice d'ACCÈS AUX INTERFACES NUMERIQUES epci 1</p>
+				<p>COMPETENCES ADMINISTATIVES epci 1</p>
+				<p>COMPÉTENCES NUMÉRIQUES / SCOLAIRES epci 1</p>
+				<p>GLOBAL ACCES epci 1</p>
+				<p>GLOBAL COMPETENCES epci 1</p>
+				<p>SCORE GLOBAL epci 1</p>
+			<h2>département</h2>
+				<p>Indice d'aCCES à L'INFORMATION departement 1</p>
+				<p>ACCÈS AUX INTERFACES NUMERIQUES departement 1</p>
+				<p>COMPETENCES ADMINISTATIVES departement 1</p>
+				<p>COMPÉTENCES NUMÉRIQUES / SCOLAIRES departement 1</p>
+				<p>GLOBAL ACCES departement 1</p>
+				<p>GLOBAL COMPETENCES  departement 1</p>
+				<p>SCORE GLOBAL departement 1</p>
+			
+			<h2>Région</h2>
+				<p>ACCES A L'INFORMATION region * </p>
+				<p>ACCES A L'INFORMATION region 1 </p>
+				<p>ACCÈS AUX INTERFACES NUMERIQUES region *</p>
+				<p>ACCÈS AUX INTERFACES NUMERIQUES region 1</p>
+				<p>COMPETENCES ADMINISTATIVES region * </p>
+				<p>COMPETENCES ADMINISTATIVES region 1 </p>
+				<p>COMPÉTENCES NUMÉRIQUES / SCOLAIRES region *  </p>
+				<p>COMPÉTENCES NUMÉRIQUES / SCOLAIRES region 1  </p>
+				<p>GLOBAL ACCES region *</p>
+				<p>GLOBAL ACCES region 1</p>
+				<p>GLOBAL COMPETENCES region *  </p>
+				<p>GLOBAL COMPETENCES region 1  </p>
+				<p>SCORE GLOBAL region 1 </p>
+				<p>SCORE GLOBAL region * </p>
+				
 			</section>
 		</main>
 	</body>
 </html>
-
-<?php 
-$servername = "localhost";
-	$username = "debian";
-	$password = "XpyJqyYagNDn";
-	$dbname = "data";
-
-	try {
-		$db = new PDO('mysql:host='.$servername.';dbname='.$dbname.';charset=utf8',$username,$password);
-	} catch (Exception $e) {
-		die('Error : '.$e->getMessage());
-	}
-?>

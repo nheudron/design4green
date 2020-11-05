@@ -1,48 +1,45 @@
 /* Basic -------------------------------------------------------------*/
 body, input, select, textarea {
-	color: black;
-	font-family: Product Sans, "Open Sans", Helvetica, sans-serif;
-	font-size: 12pt;
-	font-weight: normal;  /* pas en gras */
-	letter-spacing: 0.075em;
-	line-height: 1.65em;
-	margin: 0;
-	padding: 0;
-}
+  color: black;
+  font-family: Product Sans, "Open Sans", Helvetica, sans-serif;
+  font-size: 12pt;
+  font-weight: normal;
+  /* pas en gras */
+  letter-spacing: 0.075em;
+  line-height: 1.65em;
+  margin: 0;
+  padding: 0; }
+
 body, section {
-	margin: 0;
-	padding: 0;
-}
-a{
-	text-decoration: none;
-	color: inherit;
-}
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
 
 h1 {
-	font: inherit;
-	font-weight: 800;
-	font-size: 1.5em;
-}
-h2 {
-	font-size: 1.5em;
-	line-height: 1.75em;
-}
-h3 {
-	font-size: 1.25em;
-	line-height: 1.5em;
-}
+  font: inherit;
+  font-weight: 800;
+  font-size: 1.5em; }
 
-li{
-	list-style: none;
-}
-td
-{
-	padding: 0 2rem;
-}
-p
-{
-	text-align: justify;
-}
+h2 {
+  font-size: 1.5em;
+  line-height: 1.75em; }
+
+h3 {
+  font-size: 1.25em;
+  line-height: 1.5em; }
+
+li {
+  list-style: none; }
+
+td {
+  padding: 0 2rem; }
+
+p {
+  text-align: justify; }
+
 button {
   background-color: #EE6C6C;
   border: none;
@@ -52,68 +49,75 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 /* Header -------------------------------------------------------------*/
 .header {
-	height: 60px;
-	line-height: 60px;
-	width: 100%;
-	background-color: #003280;
-	color: white;
-	z-index: 100;
-	top: 0;
-}
+  position: fixed;
+  height: 60px;
+  line-height: 60px;
+  width: 100%;
+  background-color: #003280;
+  color: white;
+  z-index: 100;
+  top: 0; }
 
 .header h1 {
-	float: left;
-	font: inherit;
-	text-decoration: none;
-	margin: 0;
-}
+  float: left;
+  font: inherit;
+  text-decoration: none;
+  margin: 0; }
 
-.header .logoMobile{
-	display: none; 
-}
-		
-.header h1 a{
-	border-bottom: 0;
-	display: inline-block;
-	height: inherit;
-	line-height: inherit;
-	text-decoration: inherit;
-	color: inherit;
-	padding-left: 20px;
-	padding-right: 20px;
-}
+.header .logoMobile {
+  display: none; }
+
+.header h1 a {
+  border-bottom: 0;
+  display: inline-block;
+  height: inherit;
+  line-height: inherit;
+  text-decoration: inherit;
+  color: inherit;
+  padding-left: 20px;
+  padding-right: 20px; }
 
 .header h1:hover {
-	background-color: rgba(203,203,203,0.51);
-}
+  background-color: rgba(203, 203, 203, 0.51); }
 
 .menu a:hover {
-	background-color: rgba(203,203,203,0.51);
-	border-radius: 50px;
-}
+  background-color: rgba(203, 203, 203, 0.51);
+  border-radius: 50px; }
 
 .header a:hover ~ .circle {
-	color: black;
-}
+  color: black; }
 
 /* Main -------------------------------------------------------------*/
-main{
-	margin-top: 60px;
-}
-.blocks
-{
-	margin: 2rem 4rem;
-	border: 1px solid black;
-    border-radius: 1rem;
-    padding: 1.5rem;
-    box-shadow: 0 0 1.5rem 2px grey;
-}
+main {
+  margin-top: 60px; }
+
+.blocks {
+  margin: 2rem 4rem;
+  padding: 1.5rem; }
+
 input[type=submit] {
-	background: none;
-	border: none;
-}
+  background: none;
+  border: none; }
+
+/* Traitement packs d'icones-----------------------------------------*/
+.logo {
+  width: 350px;
+  height: 350px;
+  object-fit: none;
+  overflow: hidden; }
+
+.l1 {
+  object-position: left; }
+
+.l2 {
+  object-position: -350px; }
+
+.l3 {
+  object-position: -700px; }
+
+.l4 {
+  object-position: right; }
