@@ -185,6 +185,22 @@
 						echo "<p>Indice de Compétence Global : " . $dataReg['GLOBAL_COMPETENCES'] . "</p>";
 						echo "<p>SCORE GLOBAL : " . $dataReg['SCORE_GLOBAL'] . "</p>";
 						?>
+
+						<button type="button" onclick="<?php printPDF($dataVille, $dataDept, $dataReg) ?>">print PDF</button>
+						<?php
+						function printPDF($dataVille, $dataDept, $dataReg)
+						{
+							require('fpdf/fpdf.php');
+
+							$pdf = new FPDF();
+							$pdf->AddPage();
+							$pdf->SetFont('Arial','',12);
+							$pdf->Cell(0,0,$dataVille);
+							$pdf->Cell(0,0,$dataDept);
+							$pdf->Cell(0,0,$dataReg);
+							$pdf->Output();
+						}
+						?>
 				</div>
 		</main>
 		<footer>
