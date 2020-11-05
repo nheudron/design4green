@@ -149,95 +149,47 @@
 					?>
 
 					<h2>indices de votre ville</h2>
-						<?php 
-						$maxValue = $minValue = $ecart = $seuil2 = $seuil3 = $seuil4 = $seuil5 = array();
-					
-						$SQLville = $db->prepare('SELECT * FROM indices WHERE iris_code LIKE ?');
-						$SQLville->execute(array($choixVille));
-						while($dataDept = $SQLville->fetch()){
-							
-						}
-					
-						
-						
-						$SQLville-> closeCursor();
+						<?php
+						$SQLVille = $db->prepare('SELECT * FROM indices WHERE iris_code LIKE ?');
+						$SQLVille->execute(array($choixVille));
+						$dataVille = $SQLVille->fetch();
+
+						echo "<p>Indice d'accès à l'information : " . $dataVille['ACCES_INFORMATION'] . "</p>";
+						echo "<p>Indice d'accès aux interfaces numériques : " . $dataVille['ACCES_INTERFACES_NUMERIQUES'] . "</p>";
+						echo "<p>Indice de compétences administratives : " . $dataVille['COMPETENCES_ADMINISTRATIVES'] . "</p>";
+						echo "<p>Indice de compétences numériques/scolaires : " . $dataVille['COMPETENCES_SCOLAIRES'] . "</p>";
+						echo "<p><br>Indices d'Accès Global : " . $dataVille['GLOBAL_ACCES'] . "</p>";
+						echo "<p>Indice de Compétence Global : " . $dataVille['GLOBAL_COMPETENCES'] . "</p>";
+						echo "<p>SCORE GLOBAL : " . $dataVille['SCORE_GLOBAL'] . "</p>";
 						?>
 					<h2>indices zone départementale</h2>
 						<?php
-						$maxValue = $minValue = $ecart = $seuil2 = $seuil3 = $seuil4 = $seuil5 = array();
-
 						$SQLdept = $db->prepare('SELECT * FROM departement WHERE iris_code LIKE ?');
 						$SQLdept->execute(array($choixVille));
 						$dataDept = $SQLdept->fetch();
 
-						$indice = array();
-						foreach ($dataDept as $key => $valDept)
-						{
-							if($minValue[$key] > $valDept || $minValue[$key] = '') $minValue[$key] = $valDept;
-							if($maxValue[$key] < $valDept || $maxValue[$key] = '') $maxValue[$key] = $valDept;
-						}
-
-						foreach ($dataDept as $key => $valDept)
-						{
-							$ecart[$key]	= $maxValue[$key] - $minValue[$key];
-							$seuil2[$key]	= $minValue[$key] + $ecart[$key];
-							$seuil3[$key]	= $minValue[$key] + $ecart[$key] * 2;
-							$seuil4[$key]	= $minValue[$key] + $ecart[$key] * 3;
-							$seuil5[$key]	= $minValue[$key] + $ecart[$key] * 4;
-
-							if($valDept < $seuil2[$key]) $indice[$key] = 1;
-							else if($valDept < $seuil3[$key]) $indice[$key] = 2;
-							else if($valDept < $seuil4[$key]) $indice[$key] = 3;
-							else if($valDept < $seuil5[$key]) $indice[$key] = 4;
-							else $indice[$key] = 5;
-						}
-
-						echo "<p>Indice d'accès à l'information : " . $indice['ACCES_INFORMATION'] . "</p>";
-						echo "<p>Indice d'accès aux interfaces numériques : " . $indice['ACCES_INTERFACES_NUMERIQUES'] . "</p>";
-						echo "<p>Indice de compétences administratives : " . $indice['COMPETENCES_ADMINISTRATIVES'] . "</p>";
-						echo "<p>Indice de compétences numériques/scolaires : " . $indice['COMPETENCES_SCOLAIRES'] . "</p>";
-						echo "<p><br>Indices d'Accès Global : " . $indice['GLOBAL_ACCES'] . "</p>";
-						echo "<p>Indice de Compétence Global : " . $indice['GLOBAL_COMPETENCES'] . "</p>";
-						echo "<p>SCORE GLOBAL : " . $indice['SCORE_GLOBAL'] . "</p>";
+						echo "<p>Indice d'accès à l'information : " . $dataDept['ACCES_INFORMATION'] . "</p>";
+						echo "<p>Indice d'accès aux interfaces numériques : " . $dataDept['ACCES_INTERFACES_NUMERIQUES'] . "</p>";
+						echo "<p>Indice de compétences administratives : " . $dataDept['COMPETENCES_ADMINISTRATIVES'] . "</p>";
+						echo "<p>Indice de compétences numériques/scolaires : " . $dataDept['COMPETENCES_SCOLAIRES'] . "</p>";
+						echo "<p><br>Indices d'Accès Global : " . $dataDept['GLOBAL_ACCES'] . "</p>";
+						echo "<p>Indice de Compétence Global : " . $dataDept['GLOBAL_COMPETENCES'] . "</p>";
+						echo "<p>SCORE GLOBAL : " . $dataDept['SCORE_GLOBAL'] . "</p>";
 						?>
 
 					<h2>indices zone régionale</h2>
 						<?php
-						$maxValue = $minValue = $ecart = $seuil2 = $seuil3 = $seuil4 = $seuil5 = array();
-
 						$SQLReg = $db->prepare('SELECT * FROM regionE WHERE iris_code LIKE ?');
 						$SQLReg->execute(array($choixVille));
 						$dataReg = $SQLReg->fetch();
-					
-						$indice = array();
-						foreach ($dataReg as $key => $valReg)
-						{
-							if($minValue[$key] > $valReg || $minValue[$key] = '') $minValue[$key] = $valReg;
-							if($maxValue[$key] < $valReg || $maxValue[$key] = '') $maxValue[$key] = $valReg;
-						}
 
-						foreach ($dataReg as $key => $valReg)
-						{
-							$ecart[$key]	= $maxValue[$key] - $minValue[$key];
-							$seuil2[$key]	= $minValue[$key] + $ecart[$key];
-							$seuil3[$key]	= $minValue[$key] + $ecart[$key] * 2;
-							$seuil4[$key]	= $minValue[$key] + $ecart[$key] * 3;
-							$seuil5[$key]	= $minValue[$key] + $ecart[$key] * 4;
-
-							if($valReg < $seuil2[$key]) $indice[$key] = 1;
-							else if($valReg < $seuil3[$key]) $indice[$key] = 2;
-							else if($valReg < $seuil4[$key]) $indice[$key] = 3;
-							else if($valReg < $seuil5[$key]) $indice[$key] = 4;
-							else $indice[$key] = 5;
-						}
-
-						echo "<p>Indice d'accès à l'information : " . $indice['ACCES_INFORMATION'] . "</p>";
-						echo "<p>Indice d'accès aux interfaces numériques : " . $indice['ACCES_INTERFACES_NUMERIQUES'] . "</p>";
-						echo "<p>Indice de compétences administratives : " . $indice['COMPETENCES_ADMINISTRATIVES'] . "</p>";
-						echo "<p>Indice de compétences numériques/scolaires : " . $indice['COMPETENCES_SCOLAIRES'] . "</p>";
-						echo "<p><br>Indices d'Accès Global : " . $indice['GLOBAL_ACCES'] . "</p>";
-						echo "<p>Indice de Compétence Global : " . $indice['GLOBAL_COMPETENCES'] . "</p>";
-						echo "<p>SCORE GLOBAL : " . $indice['SCORE_GLOBAL'] . "</p>";
+						echo "<p>Indice d'accès à l'information : " . $dataReg['ACCES_INFORMATION'] . "</p>";
+						echo "<p>Indice d'accès aux interfaces numériques : " . $dataReg['ACCES_INTERFACES_NUMERIQUES'] . "</p>";
+						echo "<p>Indice de compétences administratives : " . $dataReg['COMPETENCES_ADMINISTRATIVES'] . "</p>";
+						echo "<p>Indice de compétences numériques/scolaires : " . $dataReg['COMPETENCES_SCOLAIRES'] . "</p>";
+						echo "<p><br>Indices d'Accès Global : " . $dataReg['GLOBAL_ACCES'] . "</p>";
+						echo "<p>Indice de Compétence Global : " . $dataReg['GLOBAL_COMPETENCES'] . "</p>";
+						echo "<p>SCORE GLOBAL : " . $dataReg['SCORE_GLOBAL'] . "</p>";
 						?>
 				</div>
 			</section>
