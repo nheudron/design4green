@@ -238,9 +238,9 @@
 			</section>
 		</main>
 		<footer>
-        	<p>© 2020 Équipe NLN dans le cadre du Design4Green</p>
-        	<p>Site héberger sur un VPS par OVH</p>
-        	<p>Ce site ne collecte aucune information</p>
+        	<p>© 2020 Équipe n°7 nommée NLN dans le cadre du Design4Green</p><p>&nbsp;&nbsp; - &nbsp;&nbsp; </p>
+        	<p>Site hébergé sur un VPS par OVH.net</p> <p>&nbsp;&nbsp; - &nbsp;&nbsp;</p>
+        	<p>Ce site ne collecte aucune donnée</p>
     	</footer>
 	</body>
 </html>
