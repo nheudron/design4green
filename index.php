@@ -8,27 +8,26 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	</head>
 	<body>
-<?php 
-$servername = "localhost";
-	$username = "debian";
-	$password = "XpyJqyYagNDn";
-	$dbname = "data";
-
-	try {
-		$db = new PDO('mysql:host='.$servername.';dbname='.$dbname.';charset=utf8',$username,$password);
-	} catch (Exception $e) {
-		die('Error : '.$e->getMessage());
-	}
-?>
+		<?php
+		$servername = "localhost";
+		$username = "debian";
+		$password = "XpyJqyYagNDn";
+		$dbname = "data";
+		try {
+			$db = new PDO('mysql:host='.$servername.';dbname='.$dbname.';charset=utf8',$username,$password);
+		} catch (Exception $e) {
+			die('Error : '.$e->getMessage());
+		}
+		?>
 		
 		<?php
-			$fichier = fopen('exemple2.txt', 'c+b');
-            fwrite($fichier, 'Un premier texte dans mon fichier');
-
-			if($fichier){
-				echo "Le fichier à été créé";
-			}
-				?>
+		require('fpdf/fpdf.php');
+		$pdf = new FPDF();
+		$pdf->AddPage();
+		$pdf->SetFont('Arial','B',16);
+		$pdf->Cell(40,10,'Hello World!');
+		$pdf->Output();
+		?>
 		
 		<header id="header" class="header">
 			<h1><a  href="index.php"><span class="titreMobile">Fragilité Numérique</span><img src="" class="logoMobile"></a></h1>
