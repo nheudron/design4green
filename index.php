@@ -25,7 +25,6 @@
 		</header>
 
 		<main>
-			<section class="blocks">
 				<p class="introduction">Cet outil permet la visualisation d'indices de fragilité numérique territoire par territoire. La fragilité numérique est identifiée sur des critères liés à l'accès au numérique et sur le niveau de compétences de chacun et chacun.
 
 				L'indice de fragilité numérique révèle les zones d'exclusion numérique sur un territoire donné. Cet outil permet, que vous soyez une commune, un département ou une région de comparer votre indice de fragilité numérique avec les autres territoires.</p>
@@ -60,16 +59,11 @@
 						</td>
 					</tr>
 				</table>
-
-			</section>
-			<section class="blocks search">
 				<h2>Accédez aux indices de fragilité numérique de votre ville</h2>
 				<form action="" method="post">
 					<label for="postalcode">Entrez le code postal de votre ville </label><input type="number" name="postalcode" id="postalcode" placeholder="49000">
 					<button>Rechercher</button>
 				</form>
-			</section>
-			<section class="blocks">
 				<div>
 					<?php
 						$i = 0;
@@ -192,7 +186,6 @@
 						echo "<p>SCORE GLOBAL : " . $dataReg['SCORE_GLOBAL'] . "</p>";
 						?>
 				</div>
-			</section>
 		</main>
 		<footer>
         	<p>© 2020 Équipe n°7 nommée NLN dans le cadre du Design4Green</p><p>&nbsp;&nbsp; - &nbsp;&nbsp; </p>
