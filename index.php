@@ -82,14 +82,32 @@
 							$SQLville = $db->prepare('SELECT * FROM ville WHERE iris_code LIKE ?');
 							$SQLville->execute(array($choixVille));						
 														
-							while($data4 = $SQLville->fetch()){ ?>
+							/*while($data4 = $SQLville->fetch()){ ?>
 
 								<?php if($data4['name'] == $data4['iris_name']){ ?>
 											<p> <?php echo "La ville est : ".$data4['name']?></p>
 								<?php }else{ ?>
 										<p> <?php echo "La ville est : ".$data4['name']." : ".$data4['iris_name']?></p>
 								<?php } 
-							}												
+							}*/
+							<form action="" method="POST">
+									<select name="choixQuartier" id="choixQuartier">
+									<?php
+									while ($data4 = $SQLville->fetch()){ ?>		
+											<option value="<?php echo $data4['iris_name']; ?>">
+												<?php if($data4['Ligne_5'] == ''){ 
+														echo $data4['Nom_commune'];
+													}else{
+														echo $data4['Ligne_5'];
+													}
+												?>
+											</option>
+									<?php 
+									}?>
+									</select>
+									<button>Selectionner</button>
+							</form>
+
 						}else{
 							if ($result2->rowCount() > 0) {?>
 								<form action="" method="POST">
