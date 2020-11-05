@@ -73,8 +73,6 @@
 				<div>
 					<?php
 						$codepostale = $_POST['postalcode'];
-						
-						
 					?>
 					<?php
 						$result2 = $db->prepare('SELECT * FROM lien_codes_postaux WHERE Code_postal = ?');
