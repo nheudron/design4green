@@ -96,7 +96,7 @@
 													}
 												?>
 											</option>
-									<?php
+									<?php 
 									}?>
 									</select>
 									<button>Selectionner</button>
