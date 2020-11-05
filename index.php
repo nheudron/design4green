@@ -124,7 +124,7 @@
 									</select>
 									<button>Selectionner</button>
 								</form>
-								<?php
+								<?php 
 							}elseif($i > 1){
 								echo "Entrez un code postal valide.";
 							}
