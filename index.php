@@ -81,40 +81,27 @@
 							$choixVille .= '%';
 							$SQLville = $db->prepare('SELECT * FROM ville WHERE iris_code LIKE ?');
 							$SQLville->execute(array($choixVille));						
-														
-							/*while($data4 = $SQLville->fetch()){ ?>
-
-								<?php if($data4['name'] == $data4['iris_name']){ ?>
-											<p> <?php echo "La ville est : ".$data4['name']?></p>
-								<?php }else{ ?>
-										<p> <?php echo "La ville est : ".$data4['name']." : ".$data4['iris_name']?></p>
-								<?php } 
-							}*/
+							 ?>
 							<form action="" method="POST">
-									<select name="choixQuartier" id="choixQuartier">
+								<select name="choixQuartier" id="choixQuartier">
 									<?php
-									while ($data4 = $SQLville->fetch()){ ?>		
-											<option value="<?php echo $data4['iris_name']; ?>">
-												<?php if($data4['Ligne_5'] == ''){ 
-														echo $data4['Nom_commune'];
-													}else{
-														echo $data4['Ligne_5'];
-													}
-												?>
+									while ($data5 = $SQLville->fetch()){ ?>		
+											<option value="<?php $data5['iris_code'].'.'.$data5['iris_name']; ?>">
+												<?php echo $data5['iris_name'];?>
 											</option>
 									<?php 
 									}?>
-									</select>
-									<button>Selectionner</button>
+								</select>
+								<button>Selectionner</button>
 							</form>
-
+						<?php
 						}else{
 							if ($result2->rowCount() > 0) {?>
 								<form action="" method="POST">
 									<select name="choixVille" id="choixVille">
 									<?php
 									while ($data2 = $result2->fetch()){ ?>		
-											<option value="<?php echo $data2['Code_commune_INSEE']; ?>">
+											<option value="<?php $data2['Code_commune_INSEE']; ?>">
 												<?php if($data2['Ligne_5'] == ''){ 
 														echo $data2['Nom_commune'];
 													}else{
@@ -133,46 +120,8 @@
 							}
 						}	
 						$result2 ->closeCursor();
-					
-						 //traitement pour récupérer code INSEE et ajouter un reg ex pour la fin
 					?>
 				</div>
-				
-			<h2>indices zone départementale</h2>
-				<?php
-				$SQLdept = $db->prepare('SELECT * FROM departement WHERE iris_code LIKE ?');
-				$SQLdept->execute(array($choixVille));
-				while($dataDept = $SQLdept->fetch())
-				{
-				?>
-				<p>Indice d'accès à l'information : <?php $dataDept['ACCES_INFORMATION'] ?></p>
-				<p>Indice d'accès aux interfaces numériques : <?php $dataDept['ACCES_INTERFACES_NUMERIQUES'] ?></p>
-				<p>Indice de compétences administratives : <?php $dataDept['COMPETENCES_ADMINISTRATIVES'] ?></p>
-				<p>Indice de compétences numériques/scolaires : <?php $dataDept['COMPETENCES_SCOLAIRES'] ?></p>
-				<p>Indices d'Accès Global : <?php $dataDept['GLOBAL_ACCES'] ?></p>
-				<p>Indice de Compétence Global : <?php $dataDept['GLOBAL_COMPETENCES'] ?></p>
-				<p>SCORE GLOBAL : <?php $dataDept['SCORE_GLOBAL'] ?></p>
-				<?php
-				}
-				?>
-			
-			<h2>indices zone régionale</h2>
-				<?php
-				$SQLReg = $db->prepare('SELECT * FROM regionE WHERE iris_code LIKE ?');
-				$SQLReg->execute(array($choixVille));
-				while($dataReg = $SQLReg->fetch())
-				{
-				?>
-				<p>Indice d'accès à l'information : <?php $dataReg['ACCES_INFORMATION'] ?></p>
-				<p>Indice d'accès aux interfaces numériques : <?php $dataReg['ACCES_INTERFACES_NUMERIQUES'] ?></p>
-				<p>Indice de compétences administratives : <?php $dataReg['COMPETENCES_ADMINISTRATIVES'] ?></p>
-				<p>Indice de compétences numériques/scolaires : <?php $dataReg['COMPETENCES_SCOLAIRES'] ?></p>
-				<p>Indices d'Accès Global : <?php $dataReg['GLOBAL_ACCES'] ?></p>
-				<p>Indice de Compétence Global : <?php $dataReg['GLOBAL_COMPETENCES'] ?></p>
-				<p>SCORE GLOBAL : <?php $dataReg['SCORE_GLOBAL'] ?></p>
-				<?php
-				}
-				?>
 			</section>
 		</main>
 	</body>
