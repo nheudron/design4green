@@ -169,8 +169,8 @@
 
 						$SQLdept->execute(array($choixVille));
 						$indice;
-						$dataDept = $SQLdept->fetch())
-						foreach ($dataDept as $key => $valDept)
+						$dataDept = $SQLdept->fetch();
+						foreach ($dataDept as $key -> $valDept)
 						{
 							if($valDept < $seuil2[$key]) $indice = 1;
 							else if($valDept < $seuil3[$key]) $indice = 2;
@@ -193,7 +193,7 @@
 						$maxValue = $minValue = $ecart = $seuil2 = $seuil3 = $seuil4 = $seuil5 = array();
 
 						$SQLReg = $db->prepare('SELECT * FROM regionE WHERE iris_code LIKE ?');
-						$SQLReg->execute(array($choixVille));)
+						$SQLReg->execute(array($choixVille));
 
 						while($dataReg = $SQLReg->fetch())
 						{
@@ -215,8 +215,8 @@
 
 						$SQLReg->execute(array($choixVille));
 						$indice;
-						$dataReg = $SQLReg->fetch())
-						foreach ($dataReg as $key => $valDept)
+						$dataReg = $SQLReg->fetch();
+						foreach ($dataReg as $key -> $valDept)
 						{
 							if($valDept < $seuil2[$key]) $indice = 1;
 							else if($valDept < $seuil3[$key]) $indice = 2;
