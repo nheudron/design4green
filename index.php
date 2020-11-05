@@ -150,6 +150,7 @@
 							$SQLReg->execute(array($choixVille));
 							$dataReg = $SQLReg->fetch();
 
+<<<<<<< HEAD
 							echo "<p>Accès à l'information : " . $dataReg['ACCES_INFORMATION'] . "</p>";
 							echo "<p>Accès aux interfaces numériques : " . $dataReg['ACCES_INTERFACES_NUMERIQUES'] . "</p>";
 							echo "<p>Compétences administratives : " . $dataReg['COMPETENCES_ADMINISTRATIVES'] . "</p>";
@@ -160,6 +161,32 @@
 							?>
 						</div>
 					</section>
+=======
+						echo "<p>Indice d'accès à l'information : " . $dataReg['ACCES_INFORMATION'] . "</p>";
+						echo "<p>Indice d'accès aux interfaces numériques : " . $dataReg['ACCES_INTERFACES_NUMERIQUES'] . "</p>";
+						echo "<p>Indice de compétences administratives : " . $dataReg['COMPETENCES_ADMINISTRATIVES'] . "</p>";
+						echo "<p>Indice de compétences numériques/scolaires : " . $dataReg['COMPETENCES_SCOLAIRES'] . "</p>";
+						echo "<p><br>Indices d'Accès Global : " . $dataReg['GLOBAL_ACCES'] . "</p>";
+						echo "<p>Indice de Compétence Global : " . $dataReg['GLOBAL_COMPETENCES'] . "</p>";
+						echo "<p>SCORE GLOBAL : " . $dataReg['SCORE_GLOBAL'] . "</p>";
+						?>
+
+						<button type="button" onclick="<?php printPDF($dataVille, $dataDept, $dataReg) ?>">print PDF</button>
+						<?php
+						function printPDF($dataVille, $dataDept, $dataReg)
+						{
+							require('fpdf/fpdf.php');
+
+							$pdf = new FPDF();
+							$pdf->AddPage();
+							$pdf->SetFont('Arial','',12);
+							$pdf->Cell(0,0,$dataVille);
+							$pdf->Cell(0,0,$dataDept);
+							$pdf->Cell(0,0,$dataReg);
+							$pdf->Output();
+						}
+						?>
+>>>>>>> origin/master
 				</div>
 		</main>
 		<footer>
