@@ -191,7 +191,7 @@
 						<?php
 						$maxValue = $minValue = $ecart = $seuil2 = $seuil3 = $seuil4 = $seuil5 = array();
 
-						$SQLReg = $db->prepare('SELECT * FROM departement WHERE iris_code LIKE ?');
+						$SQLReg = $db->prepare('SELECT * FROM regionE WHERE iris_code LIKE ?');
 						$SQLReg->execute(array($choixVille));
 
 						while($dataReg = $SQLReg->fetch())
