@@ -76,32 +76,40 @@
 						$result2 = $db->prepare('SELECT * FROM lien_codes_postaux WHERE Code_postal = ?');
 						$result2->execute(array($codepostale));
 					
-						if(isset($_POST['choixVille'])){ ?>
+						if(isset($_POST['choixQuartier'])){
+							printResults($_POST['SQLville']);
+						}
+						elseif(isset($_POST['choixVille'])){ ?>
 							<?php $choixVille = $_POST['choixVille'];
 							$choixVille .= '%';
 							$SQLville = $db->prepare('SELECT * FROM ville WHERE iris_code LIKE ?');
 							$SQLville->execute(array($choixVille));						
+
+							if($SQLville->rowCount() > 1){
 							 ?>
-							<form action="" method="POST">
-								<select name="choixQuartier" id="choixQuartier">
-									<?php
-									while ($data5 = $SQLville->fetch()){ ?>		
-											<option value="<?php $data5['iris_code'].'.'.$data5['iris_name']; ?>">
-												<?php echo $data5['iris_name'];?>
-											</option>
-									<?php 
-									}?>
-								</select>
-								<button>Selectionner</button>
-							</form>
-						<?php
+									<form action="" method="POST">
+										<select name="choixQuartier" id="choixQuartier">
+											<?php
+											while ($data5 = $SQLville->fetch()){ ?>		
+													<option value="<?php $data5['iris_code'].'.'.$data5['iris_name']; ?>">
+														<?php echo $data5['iris_name'];?>
+													</option>
+											<?php 
+											}?>
+										</select>
+										<input type="hidden" name="SQLville" id="SQLville" value="<?php $SQLville ?>">
+										<button>Selectionner</button>
+									</form>
+							<?php }else{
+									printResults($SQLville);
+								}
 						}else{
 							if ($result2->rowCount() > 0) {?>
 								<form action="" method="POST">
 									<select name="choixVille" id="choixVille">
 									<?php
 									while ($data2 = $result2->fetch()){ ?>		
-											<option value="<?php $data2['Code_commune_INSEE']; ?>">
+											<option value="<?php echo $data2['Code_commune_INSEE']; ?>">
 												<?php if($data2['Ligne_5'] == ''){ 
 														echo $data2['Nom_commune'];
 													}else{
@@ -120,6 +128,16 @@
 							}
 						}	
 						$result2 ->closeCursor();
+					
+						function printResults($SQLville){
+							while($data4 = $SQLville->fetch()){ ?>
+								<?php if($data4['name'] == $data4['iris_name']){ ?>
+										<p> <?php echo "La ville est : ".$data4['name']?></p>
+								<?php }else{ ?>
+										<p> <?php echo "La ville est : ".$data4['name']." : ".$data4['iris_name']?></p>
+								<?php } 
+							}
+						}
 					?>
 				</div>
 			</section>
