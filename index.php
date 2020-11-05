@@ -103,7 +103,7 @@
 				<p>GLOBAL ACCES epci 1</p>
 				<p>GLOBAL COMPETENCES epci 1</p>
 				<p>SCORE GLOBAL epci 1</p>
-			<h2>département</h2>
+			<h2>Département</h2>
 				<p>Indice d'aCCES à L'INFORMATION departement 1</p>
 				<p>ACCÈS AUX INTERFACES NUMERIQUES departement 1</p>
 				<p>COMPETENCES ADMINISTATIVES departement 1</p>
