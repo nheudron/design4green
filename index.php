@@ -81,10 +81,22 @@ $servername = "localhost";
 				</form>
 			</section>
 			<section class="blocks">
-				<?php
-					$codepostale = $_GET['postalcode'];
-					
-				?>
+				<div>
+					<?php
+						$codepostale = $_GET['postalcode'];
+						$result = $db->query('SELECT * FROM ville LIMIT 15;');
+						if ($result->rowCount() > 0) {
+							while ($data = $result->fetch()){ 
+								 ?>
+								<p> <?php echo $data['libcom']?></p>
+						<?php }
+						}else{
+							echo "Pas de données dans la table";
+						}
+					?>
+				</div>
+				
+				
 				<img class="logo l1" src="images/logoPack1.png">
 			<h2>Aglomération</h2>
 				<p>Indice d'accès à l'information epci 1</p>
