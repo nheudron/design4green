@@ -30,7 +30,7 @@
 
 				L'indice de fragilité numérique révèle les zones d'exclusion numérique sur un territoire donné. Cet outil permet, que vous soyez une commune, un département ou une région de comparer votre indice de fragilité numérique avec les autres territoires.</p>
 
-				<h2>Les 4 indicateurs de fragilité</h2>
+				<h3>Les 4 indicateurs de fragilité</h3>
 
 				<p>Les quatre indicateurs retenus permettent de créer une analyse globale s'appuyant sur l'accès d'une part (information, interfaces numériques) et sur les compétences d'autre part (utilisation d'une interface,compétences administratives).</p>
 
@@ -63,9 +63,9 @@
 
 			</section>
 			<section class="blocks search">
-				<h1>Accédez aux indices de fragilité numérique de votre ville</h1>
+				<h2>Accédez aux indices de fragilité numérique de votre ville</h2>
 				<form action="" method="post">
-					<input type="number" name="postalcode" placeholder="49000">
+					<label for="postalcode">Entrez le code postal de votre ville </label><input type="number" name="postalcode" id="postalcode" placeholder="49000">
 					<button>Rechercher</button>
 				</form>
 			</section>

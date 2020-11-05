@@ -25,7 +25,7 @@ h1 {
   }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 2.5em;
   line-height: 1.75em;
   color: #003280; }
 
@@ -124,7 +124,7 @@ input[type=submit] {
 }
 
 .l1 {
-  object-position: left; }
+  object-position: -25px; }
 
 .l2 {
   object-position: -220px; }
@@ -133,4 +133,4 @@ input[type=submit] {
   object-position: -425px; }
 
 .l4 {
-  object-position: right; }
+  object-position: -620px; }
