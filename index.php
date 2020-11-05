@@ -32,33 +32,30 @@
 				<h3>Les 4 indicateurs de fragilité</h3>
 
 				<p>Les quatre indicateurs retenus permettent de créer une analyse globale s'appuyant sur l'accès d'une part (information, interfaces numériques) et sur les compétences d'autre part (utilisation d'une interface,compétences administratives).</p>
-
-				<table>
-					<tr>
-						<td>
-							<img class="logo l3" src="images/logoPack1.jpg">
-							<h3>Accès à l'information</h3>
-							<p>Identifier des territoires mal couverts par une offre de service d'information ou des populations qui auront des difficultés à comprendre l'information.</p>
-						</td>
-						<td>
-							<img class="logo l2" src="images/logoPack1.jpg">
-							<h3>Capacité d'usage des interfaces numériques</h3>
-							<p>Identifier des populations parmi lesquelles s'observe une fréquence d'illectronisme ou difficulté à utiliser internet.</p>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<img class="logo l4" src="images/logoPack1.jpg">
-							<h3>Accès aux interfaces numériques</h3>
-							<p>Identifier des territoires mal couverts par les réseaux ou dans lesquels des populations auront des difficultés financières à y accéder.</p>
-						</td>
-						<td>
-							<img class="logo l1" src="images/logoPack1.jpg">
-							<h3>Compétences administratives</h3>
-							<p>Identifier des populations parmi lesquelles s'observent des difficultés à accomplir des procédures administratives.</p>
-						</td>
-					</tr>
-				</table>
+				<section class="logos">
+					<div>
+						<img class="logo l3" src="images/logoPack1.jpg">
+						<h3>Accès à l'information</h3>
+						<p>Identifier des territoires mal couverts par une offre de service d'information ou des populations qui auront des difficultés à comprendre l'information.</p>
+					</div>
+					<div>
+						<img class="logo l4" src="images/logoPack1.jpg">
+						<h3>Accès aux interfaces numériques</h3>
+						<p>Identifier des territoires mal couverts par les réseaux ou dans lesquels des populations auront des difficultés financières à y accéder.</p>
+					</div>
+					<div>
+						<img class="logo l2" src="images/logoPack1.jpg">
+						<h3>Capacité d'usage des interfaces numériques</h3>
+						<p>Identifier des populations parmi lesquelles s'observe une fréquence d'illectronisme ou difficulté à utiliser internet.</p>
+						
+					</div>
+					<div>
+						<img class="logo l1" src="images/logoPack1.jpg">
+						<h3>Compétences administratives</h3>
+						<p>Identifier des populations parmi lesquelles s'observent des difficultés à accomplir des procédures administratives.</p>
+					</div>
+				</section>
+			
 				<h2>Accédez aux indices de fragilité numérique de votre ville</h2>
 				<form action="" method="post">
 					<label for="postalcode">Entrez le code postal de votre ville </label><input type="number" name="postalcode" id="postalcode" placeholder="49000">
@@ -113,55 +110,61 @@
 							}
 						}
 					?>
+					<section class="resultats">
+						<div>
+							<h4>indices de votre ville</h4>
+							<?php
+							$SQLVille = $db->prepare('SELECT * FROM indices WHERE iris_code LIKE ?');
+							$SQLVille->execute(array($choixVille));
+							$dataVille = $SQLVille->fetch();
 
-					<h2>indices de votre ville</h2>
-						<?php
-						$SQLVille = $db->prepare('SELECT * FROM indices WHERE iris_code LIKE ?');
-						$SQLVille->execute(array($choixVille));
-						$dataVille = $SQLVille->fetch();
+							echo "<p>Accès à l'information : " . $dataVille['ACCES_INFORMATION'] . "</p>";
+							echo "<p>Accès aux interfaces numériques : " . $dataVille['ACCES_INTERFACES_NUMERIQUES'] . "</p>";
+							echo "<p>Compétences administratives : " . $dataVille['COMPETENCES_ADMINISTRATIVES'] . "</p>";
+							echo "<p>Compétences numériques/scolaires : " . $dataVille['COMPETENCES_SCOLAIRES'] . "</p>";
+							echo "<p><br>Accès Global : " . $dataVille['GLOBAL_ACCES'] . "</p>";
+							echo "<p>Compétence Global : " . $dataVille['GLOBAL_COMPETENCES'] . "</p>";
+							echo "<p>SCORE GLOBAL : " . $dataVille['SCORE_GLOBAL'] . "</p>";
+							?>
+						</div>
+						<div>
+							<h4>Données départementales</h4>
+							<?php
+							$SQLdept = $db->prepare('SELECT * FROM departement WHERE iris_code LIKE ?');
+							$SQLdept->execute(array($choixVille));
+							$dataDept = $SQLdept->fetch();
 
-						echo "<p>Indice d'accès à l'information : " . $dataVille['ACCES_INFORMATION'] . "</p>";
-						echo "<p>Indice d'accès aux interfaces numériques : " . $dataVille['ACCES_INTERFACES_NUMERIQUES'] . "</p>";
-						echo "<p>Indice de compétences administratives : " . $dataVille['COMPETENCES_ADMINISTRATIVES'] . "</p>";
-						echo "<p>Indice de compétences numériques/scolaires : " . $dataVille['COMPETENCES_SCOLAIRES'] . "</p>";
-						echo "<p><br>Indices d'Accès Global : " . $dataVille['GLOBAL_ACCES'] . "</p>";
-						echo "<p>Indice de Compétence Global : " . $dataVille['GLOBAL_COMPETENCES'] . "</p>";
-						echo "<p>SCORE GLOBAL : " . $dataVille['SCORE_GLOBAL'] . "</p>";
-						?>
-					<h2>indices zone départementale</h2>
-						<?php
-						$SQLdept = $db->prepare('SELECT * FROM departement WHERE iris_code LIKE ?');
-						$SQLdept->execute(array($choixVille));
-						$dataDept = $SQLdept->fetch();
+							echo "<p>Accès à l'information : " . $dataDept['ACCES_INFORMATION'] . "</p>";
+							echo "<p>Accès aux interfaces numériques : " . $dataDept['ACCES_INTERFACES_NUMERIQUES'] . "</p>";
+							echo "<p>Compétences administratives : " . $dataDept['COMPETENCES_ADMINISTRATIVES'] . "</p>";
+							echo "<p>Compétences numériques/scolaires : " . $dataDept['COMPETENCES_SCOLAIRES'] . "</p>";
+							echo "<p><br>Accès Global : " . $dataDept['GLOBAL_ACCES'] . "</p>";
+							echo "<p>Compétence Global : " . $dataDept['GLOBAL_COMPETENCES'] . "</p>";
+							echo "<p>SCORE GLOBAL : " . $dataDept['SCORE_GLOBAL'] . "</p>";
+							?>
+						</div>
+						<div>
+							<h4>Données régionales</h4>
+							<?php
+							$SQLReg = $db->prepare('SELECT * FROM region WHERE iris_code LIKE ?');
+							$SQLReg->execute(array($choixVille));
+							$dataReg = $SQLReg->fetch();
 
-						echo "<p>Indice d'accès à l'information : " . $dataDept['ACCES_INFORMATION'] . "</p>";
-						echo "<p>Indice d'accès aux interfaces numériques : " . $dataDept['ACCES_INTERFACES_NUMERIQUES'] . "</p>";
-						echo "<p>Indice de compétences administratives : " . $dataDept['COMPETENCES_ADMINISTRATIVES'] . "</p>";
-						echo "<p>Indice de compétences numériques/scolaires : " . $dataDept['COMPETENCES_SCOLAIRES'] . "</p>";
-						echo "<p><br>Indices d'Accès Global : " . $dataDept['GLOBAL_ACCES'] . "</p>";
-						echo "<p>Indice de Compétence Global : " . $dataDept['GLOBAL_COMPETENCES'] . "</p>";
-						echo "<p>SCORE GLOBAL : " . $dataDept['SCORE_GLOBAL'] . "</p>";
-						?>
-
-					<h2>indices zone régionale</h2>
-						<?php
-						$SQLReg = $db->prepare('SELECT * FROM region WHERE iris_code LIKE ?');
-						$SQLReg->execute(array($choixVille));
-						$dataReg = $SQLReg->fetch();
-
-						echo "<p>Indice d'accès à l'information : " . $dataReg['ACCES_INFORMATION'] . "</p>";
-						echo "<p>Indice d'accès aux interfaces numériques : " . $dataReg['ACCES_INTERFACES_NUMERIQUES'] . "</p>";
-						echo "<p>Indice de compétences administratives : " . $dataReg['COMPETENCES_ADMINISTRATIVES'] . "</p>";
-						echo "<p>Indice de compétences numériques/scolaires : " . $dataReg['COMPETENCES_SCOLAIRES'] . "</p>";
-						echo "<p><br>Indices d'Accès Global : " . $dataReg['GLOBAL_ACCES'] . "</p>";
-						echo "<p>Indice de Compétence Global : " . $dataReg['GLOBAL_COMPETENCES'] . "</p>";
-						echo "<p>SCORE GLOBAL : " . $dataReg['SCORE_GLOBAL'] . "</p>";
-						?>
+							echo "<p>Accès à l'information : " . $dataReg['ACCES_INFORMATION'] . "</p>";
+							echo "<p>Accès aux interfaces numériques : " . $dataReg['ACCES_INTERFACES_NUMERIQUES'] . "</p>";
+							echo "<p>Compétences administratives : " . $dataReg['COMPETENCES_ADMINISTRATIVES'] . "</p>";
+							echo "<p>Compétences numériques/scolaires : " . $dataReg['COMPETENCES_SCOLAIRES'] . "</p>";
+							echo "<p><br>Accès Global : " . $dataReg['GLOBAL_ACCES'] . "</p>";
+							echo "<p>Compétence Global : " . $dataReg['GLOBAL_COMPETENCES'] . "</p>";
+							echo "<p>SCORE GLOBAL : " . $dataReg['SCORE_GLOBAL'] . "</p>";
+							?>
+						</div>
+					</section>
 				</div>
 		</main>
 		<footer>
-        	<p>© 2020 Équipe n°7 nommée NLN dans le cadre du Design4Green</p><p>&nbsp;&nbsp; - &nbsp;&nbsp; </p>
-        	<p>Site hébergé sur un VPS par OVH.net</p> <p>&nbsp;&nbsp; - &nbsp;&nbsp;</p>
+        	<p>© 2020 Équipe n°7 nommée NLN dans le cadre du Design4Green</p>
+        	<p>Site hébergé sur un VPS par OVH.net</p>
         	<p>Ce site ne collecte aucune donnée</p>
     	</footer>
 	</body>
