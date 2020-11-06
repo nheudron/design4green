@@ -127,6 +127,12 @@
 							echo "<p>Compétence Global : " . $dataVille['GLOBAL_COMPETENCES'] . "</p>";
 							echo "<p>SCORE GLOBAL : " . $dataVille['SCORE_GLOBAL'] . "</p>";
 							$_SESSION["ACCES_INFORMATION_Ville"] =  $dataVille['ACCES_INFORMATION'];
+							$_SESSION["ACCES_INTERFACES_NUMERIQUES_Ville"] =  $dataVille['ACCES_INTERFACES_NUMERIQUES'];
+							$_SESSION["COMPETENCES_ADMINISTRATIVES_Ville"] =  $dataVille['COMPETENCES_ADMINISTRATIVES'];
+							$_SESSION["COMPETENCES_SCOLAIRES_Ville"] =  $dataVille['COMPETENCES_SCOLAIRES'];
+							$_SESSION["GLOBAL_ACCES_Ville"] =  $dataVille['GLOBAL_ACCES'];
+							$_SESSION["GLOBAL_COMPETENCES_Ville"] =  $dataVille['GLOBAL_COMPETENCES'];
+							$_SESSION["SCORE_GLOBAL_Ville"] =  $dataVille['SCORE_GLOBAL'];
 							?>
 						</div>
 						<div>
