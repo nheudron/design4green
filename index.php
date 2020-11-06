@@ -100,16 +100,6 @@
 							}
 						 }	
 						$result2 -> closeCursor();
-					
-						function printResults($SQLville){
-							while($data4 = $SQLville->fetch()){ ?>
-								<?php if($data4['name'] == $data4['iris_name']){ ?>
-										<p> <?php echo "La ville est : ".$data4['name']." identifiée par son iris_code : ".$data4['iris_code']?></p>
-								<?php }else{ ?>
-										<p> <?php echo "La ville est : ".$data4['name']." : ".$data4['iris_name']." identifiée par son iris_code : ".$data4['iris_code']?></p>
-								<?php } 
-							}
-						}
 					?>
 					<section class="resultats">
 						<div>
