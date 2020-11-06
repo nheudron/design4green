@@ -9,6 +9,7 @@
 	</head>
 	<body>
 		<?php
+		session_start();
 		$servername = "localhost";
 		$username = "debian";
 		$password = "XpyJqyYagNDn";
@@ -125,6 +126,7 @@
 							echo "<p><br>Accès Global : " . $dataVille['GLOBAL_ACCES'] . "</p>";
 							echo "<p>Compétence Global : " . $dataVille['GLOBAL_COMPETENCES'] . "</p>";
 							echo "<p>SCORE GLOBAL : " . $dataVille['SCORE_GLOBAL'] . "</p>";
+							$_SESSION["ACCES_INFORMATION_Ville"] =  $dataVille['ACCES_INFORMATION'];
 							?>
 						</div>
 						<div>
@@ -141,6 +143,7 @@
 							echo "<p><br>Accès Global : " . $dataDept['GLOBAL_ACCES'] . "</p>";
 							echo "<p>Compétence Global : " . $dataDept['GLOBAL_COMPETENCES'] . "</p>";
 							echo "<p>SCORE GLOBAL : " . $dataDept['SCORE_GLOBAL'] . "</p>";
+							$_SESSION["ACCES_INFORMATION_Dep"] =  $dataDept['ACCES_INFORMATION'];
 							?>
 						</div>
 						<div>
@@ -157,6 +160,7 @@
 							echo "<p><br>Accès Global : " . $dataReg['GLOBAL_ACCES'] . "</p>";
 							echo "<p>Compétence Global : " . $dataReg['GLOBAL_COMPETENCES'] . "</p>";
 							echo "<p>SCORE GLOBAL : " . $dataReg['SCORE_GLOBAL'] . "</p>";
+							$_SESSION["ACCES_INFORMATION_Reg"] =  $dataReg['ACCES_INFORMATION'];
 							?>
 						</div>
 					</section>
