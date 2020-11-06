@@ -149,8 +149,11 @@ button {
 	justify-content: center;
 }
 .resultats div{
-	margin: 0 10px;
-	
+	margin: 0 15px;
+	text-align: center;
+}
+.resultats p{
+	text-align: center;
 }
 input[type=submit] {
   background: none;

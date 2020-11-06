@@ -14,6 +14,7 @@
 		$username = "debian";
 		$password = "XpyJqyYagNDn";
 		$dbname = "data";
+		$i = 0;
 		try {
 			$db = new PDO('mysql:host='.$servername.';dbname='.$dbname.';charset=utf8',$username,$password);
 		} catch (Exception $e) {
@@ -74,7 +75,7 @@
 							$choixVille .= '%';					
 
 						}else{
-							if ($result2->rowCount() > 0) {?>
+							if ($result2->rowCount() >= 1) {?>
 								<br><br>
 								<form action="" method="POST">
 									<center><label for="postalcode">Selectionnez votre ville<br><hr width=300px></label>
@@ -96,7 +97,7 @@
 								</form>
 								
 								<?php 
-							}elseif($result2->rowCount() == 0){
+							}else{
 								echo "<br><center>Entrez un code postal valide.</center>";
 							}
 						 }	
