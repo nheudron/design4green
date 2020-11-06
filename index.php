@@ -122,7 +122,7 @@
 							$_SESSION["GLOBAL_COMPETENCES_Ville"] =  $dataVille['GLOBAL_COMPETENCES'];
 							$_SESSION["SCORE_GLOBAL_Ville"] =  $dataVille['SCORE_GLOBAL'];
 
-							$_SESSION["ville"] = $dataVille['iris_name'];
+							$_SESSION["ville"] = $dataVille['name'];
 							?>
 						</div>
 						<div>
