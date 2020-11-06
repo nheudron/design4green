@@ -82,10 +82,8 @@
 											<option value="<?php echo $data2['Code_commune_INSEE']; ?>">
 												<?php if($data2['Ligne_5'] == ''){ 
 														echo $data2['Nom_commune'];
-														$_SESSION["Nom_commune"] = $data2['Nom_commune'];
 													}else{
 														echo $data2['Ligne_5'];
-														$_SESSION["Ligne_5"] = $data2['Ligne_5'];
 													}
 												?>
 											</option>
@@ -123,6 +121,8 @@
 							$_SESSION["GLOBAL_ACCES_Ville"] =  $dataVille['GLOBAL_ACCES'];
 							$_SESSION["GLOBAL_COMPETENCES_Ville"] =  $dataVille['GLOBAL_COMPETENCES'];
 							$_SESSION["SCORE_GLOBAL_Ville"] =  $dataVille['SCORE_GLOBAL'];
+
+							$_SESSION["ville"] = $dataVille['iris_name'];
 							?>
 						</div>
 						<div>
