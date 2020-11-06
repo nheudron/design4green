@@ -161,21 +161,9 @@
 						</div>
 					</section>
 
-						<button onclick="<?php printPDF($dataVille, $dataDept, $dataReg) ?>">print PDF</button>
-						<?php
-						function printPDF($dataVille, $dataDept, $dataReg)
-						{
-							require('fpdf/fpdf.php');
-
-							$pdf = new FPDF();
-							$pdf->AddPage();
-							$pdf->SetFont('Arial','',12);
-							$pdf->Cell(0,0,$dataVille);
-							$pdf->Cell(0,0,$dataDept);
-							$pdf->Cell(0,0,$dataReg);
-							$pdf->Output();
-						}
-						?>
+					<form action="pdf.php">
+						<input type="submit">print PDF</button>
+					</form>
 				</div>
 		</main>
 		<footer>
