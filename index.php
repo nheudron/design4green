@@ -175,6 +175,8 @@
 							$_SESSION["SCORE_GLOBAL_Reg"] =  $dataReg['SCORE_GLOBAL'];
 							?>
 						</div>
+
+						<p>Dans chaque catégorie, plus les valeurs des indices sont grandes, plus la précarité informatique de cette catégorie est importante. Pour information, si l'indice est en dessous de 100, vous pouvez estimer que le territoire a une faible fragilité numérique enregistrée. Au contraire, si l'indice est supérieure à 100, le territoire présente une certaine lacune numérique.</p>
 					</section>
 					
 					<br>
