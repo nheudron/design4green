@@ -110,16 +110,19 @@ main {
 .logos{
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-between;
 }
-.logos div{
-	width: 49.99%;
-	min-width: 500px;
-}
-@ media and screen (max-width: 580px){
+@media screen and (min-width: 581px){
 	.logos div{
-	width: 49.99%;
-	min-width: 500px;
+		width: 45.99%;
+		min-width: 500px;
+	}
 }
+
+@media screen and (max-width: 580px){
+	.logos div{
+		width: 90%;
+	}
 }
 .resultats{
 	display: flex;
@@ -135,12 +138,24 @@ input[type=submit] {
 
 /* Traitement packs d'icones-----------------------------------------*/
 .logo {
-  width: 160px;
-  height: 200px;
   object-fit: cover;
   overflow: hidden; 
   float: left;
-	margin-right: 10px;
+  margin-right: 10px;
+}
+
+@media screen and (min-width: 500px){
+	.logo{
+		width: 160px;
+  		height: 200px;
+	}
+}
+
+@media screen and (max-width: 499px){
+	.logo{
+		width: 80px;
+  		height: 100px;
+	}
 }
 
 .l1 {
