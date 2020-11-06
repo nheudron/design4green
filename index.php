@@ -161,7 +161,6 @@
 						</div>
 					</section>
 					<div>
-						<button >print PDF</button>
 						<?php
 						function printPDF($dataVille, $dataDept, $dataReg)
 						{
@@ -178,7 +177,7 @@
 						?>
 					</div>
 					<form action="pdf.php">
-						<input type="submit">print PDF</button>
+						<button>Print PDF</button>
 					</form>
 				</div>
 		</main>
