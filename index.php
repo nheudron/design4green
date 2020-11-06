@@ -59,8 +59,8 @@
 			
 				<h2>Accédez aux indices de fragilité numérique de votre ville</h2>
 				<form action="" method="post">
-					<label for="postalcode">Entrez le code postal de votre ville </label><input type="number" name="postalcode" id="postalcode" placeholder="49000">
-					<button>Rechercher</button>
+					<center><label for="postalcode">Entrez le code postal de votre ville </label><input type="number" name="postalcode" id="postalcode" placeholder="49000">
+					<button>Rechercher</button></center>
 				</form>
 				<div>
 					<?php
@@ -170,8 +170,8 @@
 							?>
 						</div>
 					</section>
-
-					<a href="pdf.php" target="_blank" class="pdf"><button>Display PDF</button></a>
+					<br>
+					<center><a href="pdf.php" target="_blank"><button>Afficher et télécharger le PDF des résultats</button></a></center>
 
 				</div>
 		</main>

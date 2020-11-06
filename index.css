@@ -197,11 +197,6 @@ input[type=submit] {
   object-position: -310px; }
 }
 
-.pdf{
-	margin: auto;
-	margin-top: 25px;
-}
-
 footer {
     display: flex;
     justify-content: center;
