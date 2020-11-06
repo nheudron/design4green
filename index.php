@@ -160,25 +160,9 @@
 							?>
 						</div>
 					</section>
-					<div>
-						<?php
-						function printPDF($dataVille, $dataDept, $dataReg)
-						{
-							require('fpdf/fpdf.php');
 
-							$pdf = new FPDF();
-							$pdf->AddPage();
-							$pdf->SetFont('Arial','',12);
-							$pdf->Cell(0,0,$dataVille);
-							$pdf->Cell(0,0,$dataDept);
-							$pdf->Cell(0,0,$dataReg);
-							$pdf->Output();
-						}
-						?>
-					</div>
-					<form action="pdf.php">
-						<button>Print PDF</button>
-					</form>
+					<a href="pdf.php" target="_blank"><button>Display PDF</button></a>
+
 				</div>
 		</main>
 		<footer>
