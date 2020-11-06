@@ -2,7 +2,7 @@
 define("FPDF_FONTPATH","/"); 
 require('fpdf/fpdf.php');
 
-$pdf = new FPDF();
+$pdf = new FPDF("P","pt","A4");
 $pdf->AddPage();
 $pdf->SetFont('Arial','',12);
 $pdf->Cell(0,0,$dataVille);
