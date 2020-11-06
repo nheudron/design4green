@@ -177,6 +177,9 @@
 						}
 						?>
 					</div>
+					<form action="pdf.php">
+						<input type="submit">print PDF</button>
+					</form>
 				</div>
 		</main>
 		<footer>
