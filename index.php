@@ -101,7 +101,7 @@
 							}
 						 }	
 						$result2 -> closeCursor();
-					?>
+					if(isset($choixVille)){?>
 					<section class="resultats">
 						<div>
 							<h3>indices de votre ville</h3>
@@ -175,9 +175,10 @@
 							?>
 						</div>
 					</section>
+					
 					<br>
 					<center><a href="pdf.php" target="_blank"><button>Afficher et télécharger le PDF des résultats</button></a></center>
-
+					<?php } ?>
 				</div>
 		</main>
 		<footer>
