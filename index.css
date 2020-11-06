@@ -103,6 +103,7 @@ button {
 }
 @media screen and (max-width: 499px){
 	main {
+	margin: 2rem 3%;
 	  padding: 1.5rem 2px;}
 }
 .introduction{
@@ -164,16 +165,7 @@ input[type=submit] {
 		width: 160px;
   		height: 200px;
 	}
-}
-
-@media screen and (max-width: 499px){
-	.logo{
-		width: 80px;
-  		height: 100px;
-	}
-}
-
-.l1 {
+	.l1 {
   object-position: -25px; }
 
 .l2 {
@@ -184,6 +176,27 @@ input[type=submit] {
 
 .l4 {
   object-position: -620px; }
+}
+
+@media screen and (max-width: 499px){
+	.logo{
+		width: 80px;
+  		height: 100px;
+	}
+	.l1 {
+  object-position: -25px; }
+
+.l2 {
+  object-position: -220px; }
+
+.l3 {
+  object-position: -212px; }
+
+.l4 {
+  object-position: -310px; }
+}
+
+
 
 footer {
     display: flex;
