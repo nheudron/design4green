@@ -30,7 +30,7 @@
 
 				L'indice de fragilité numérique révèle les zones d'exclusion numérique sur un territoire donné. Cet outil permet, que vous soyez une commune, un département ou une région de comparer votre indice de fragilité numérique avec les autres territoires.</p>
 
-				<h3>Les 4 indicateurs de fragilité</h3>
+				<h2>Les 4 indicateurs de fragilité</h2>
 
 				<p>Les quatre indicateurs retenus permettent de créer une analyse globale s'appuyant sur l'accès d'une part (information, interfaces numériques) et sur les compétences d'autre part (utilisation d'une interface,compétences administratives).</p>
 				<section class="logos">
@@ -59,7 +59,7 @@
 			
 				<h2>Accédez aux indices de fragilité numérique de votre ville</h2>
 				<form action="" method="post">
-					<center><label for="postalcode">Entrez le code postal de votre ville </label><input type="number" name="postalcode" id="postalcode" placeholder="49000">
+					<center><label for="postalcode">Entrez le code postal de votre ville<br><hr width=300px></label><input type="number" name="postalcode" id="postalcode" placeholder="49000">
 					<button>Rechercher</button></center>
 				</form>
 				<div>
@@ -75,7 +75,9 @@
 
 						}else{
 							if ($result2->rowCount() > 0) {?>
+								<br><br>
 								<form action="" method="POST">
+									<center><label for="postalcode">Selectionnez votre ville<br><hr width=300px></label>
 									<select name="choixVille" id="choixVille">
 									<?php
 									while ($data2 = $result2->fetch()){ ?>		
@@ -90,18 +92,19 @@
 									<?php 
 									}?>
 									</select>
-									<button>Selectionner</button>
+									<button>Selectionner</button></center><br>
 								</form>
+								
 								<?php 
 							}elseif($result2->rowCount() == 0){
-								echo "Entrez un code postal valide.";
+								echo "<br><center>Entrez un code postal valide.</center>";
 							}
 						 }	
 						$result2 -> closeCursor();
 					?>
 					<section class="resultats">
 						<div>
-							<h4>indices de votre ville</h4>
+							<h3>indices de votre ville</h3>
 							<?php
 							$SQLVille = $db->prepare('SELECT * FROM indices WHERE iris_code LIKE ?');
 							$SQLVille->execute(array($choixVille));
@@ -126,7 +129,7 @@
 							?>
 						</div>
 						<div>
-							<h4>Données départementales</h4>
+							<h3>Données départementales</h3>
 							<?php
 							$SQLdept = $db->prepare('SELECT * FROM departement WHERE iris_code LIKE ?');
 							$SQLdept->execute(array($choixVille));
@@ -149,7 +152,7 @@
 							?>
 						</div>
 						<div>
-							<h4>Données régionales</h4>
+							<h3>Données régionales</h3>
 							<?php
 							$SQLReg = $db->prepare('SELECT * FROM region WHERE iris_code LIKE ?');
 							$SQLReg->execute(array($choixVille));
@@ -178,8 +181,8 @@
 				</div>
 		</main>
 		<footer>
-        	<p>© 2020 Équipe n°7 nommée NLN dans le cadre du Design4Green</p>
-        	<p>Site hébergé sur un VPS par OVH.net</p>
+        	<p>©2020-Design4Green Équipe NLN n°7</p>
+        	<p>Site hébergé par OVH.net</p>
         	<p>Ce site ne collecte aucune donnée</p>
     	</footer>
 	</body>
