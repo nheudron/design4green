@@ -82,8 +82,10 @@
 											<option value="<?php echo $data2['Code_commune_INSEE']; ?>">
 												<?php if($data2['Ligne_5'] == ''){ 
 														echo $data2['Nom_commune'];
+														$_SESSION["Nom_commune"] = $data2['Nom_commune'];
 													}else{
 														echo $data2['Ligne_5'];
+														$_SESSION["Ligne_5"] = $data2['Ligne_5'];
 													}
 												?>
 											</option>
