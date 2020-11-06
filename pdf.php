@@ -1,6 +1,13 @@
 <?php 
 session_start();
 require('fpdf/fpdf.php');
+
+$nomCommune = $_SESSION["Nom_commune"];
+$complCommune = $_SESSION["Ligne_5"];
+
+if($complCommune == '') $commune = $nomCommune;
+else $commune = $complCommune;
+
 $ACCES_INFORMATION_Ville = $_SESSION["ACCES_INFORMATION_Ville"];
 $ACCES_INTERFACES_NUMERIQUES_Ville = $_SESSION["ACCES_INTERFACES_NUMERIQUES_Ville"];
 $COMPETENCES_ADMINISTRATIVES_Ville = $_SESSION["COMPETENCES_ADMINISTRATIVES_Ville"];
@@ -30,7 +37,10 @@ $lineHeight = 5;
 $pdf = new FPDF();
 $pdf->AddPage();
 $pdf->SetFont('Arial','',12);
-$pdf->Cell(0,$lineHeight,"indices de la ville :");
+$pdf->Cell(0,$lineHeight,"commune représentée : " . $commune);
+$pdf->Ln();
+$pdf->Ln();
+$pdf->Cell(0,$lineHeight,"indices de votre ville :");
 $pdf->Ln();
 $pdf->Cell(0,$lineHeight,"Acces a l'information : " . $ACCES_INFORMATION_Ville);
 $pdf->Ln();
@@ -38,7 +48,7 @@ $pdf->Cell(0,$lineHeight,"Acces aux interfaces numeriques : " . $ACCES_INTERFACE
 $pdf->Ln();
 $pdf->Cell(0,$lineHeight,"Competences administratives : " . $COMPETENCES_ADMINISTRATIVES_Ville);
 $pdf->Ln();
-$pdf->Cell(0,$lineHeight,"Competences numeriques/scolaires :" . $COMPETENCES_SCOLAIRES_Ville);
+$pdf->Cell(0,$lineHeight,"Competences numeriques/scolaires : " . $COMPETENCES_SCOLAIRES_Ville);
 $pdf->Ln();
 $pdf->Cell(0,$lineHeight,"Acces Global : " . $GLOBAL_ACCES_Ville);
 $pdf->Ln();
@@ -56,7 +66,7 @@ $pdf->Cell(0,$lineHeight,"Acces aux interfaces numeriques : " . $ACCES_INTERFACE
 $pdf->Ln();
 $pdf->Cell(0,$lineHeight,"Competences administratives : " . $COMPETENCES_ADMINISTRATIVES_Dep);
 $pdf->Ln();
-$pdf->Cell(0,$lineHeight,"Competences numeriques/scolaires :" . $COMPETENCES_SCOLAIRES_Dep);
+$pdf->Cell(0,$lineHeight,"Competences numeriques/scolaires : " . $COMPETENCES_SCOLAIRES_Dep);
 $pdf->Ln();
 $pdf->Cell(0,$lineHeight,"Acces Global : " . $GLOBAL_ACCES_Dep);
 $pdf->Ln();
@@ -74,7 +84,7 @@ $pdf->Cell(0,$lineHeight,"Acces aux interfaces numeriques : " . $ACCES_INTERFACE
 $pdf->Ln();
 $pdf->Cell(0,$lineHeight,"Competences administratives : " . $COMPETENCES_ADMINISTRATIVES_Reg);
 $pdf->Ln();
-$pdf->Cell(0,$lineHeight,"Competences numeriques/scolaires :" . $COMPETENCES_SCOLAIRES_Reg);
+$pdf->Cell(0,$lineHeight,"Competences numeriques/scolaires : " . $COMPETENCES_SCOLAIRES_Reg);
 $pdf->Ln();
 $pdf->Cell(0,$lineHeight,"Acces Global : " . $GLOBAL_ACCES_Reg);
 $pdf->Ln();
