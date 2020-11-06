@@ -71,9 +71,7 @@
 
 						if(isset($_POST['choixVille'])){ ?>
 							<?php $choixVille = $_POST['choixVille'];
-							$choixVille .= '%';
-							$SQLville = $db->prepare('SELECT * FROM ville WHERE iris_code LIKE ?');
-							$SQLville->execute(array($choixVille));						
+							$choixVille .= '%';					
 
 						}else{
 							if ($result2->rowCount() > 0) {?>
