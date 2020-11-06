@@ -150,6 +150,12 @@
 							echo "<p>Compétence Global : " . $dataDept['GLOBAL_COMPETENCES'] . "</p>";
 							echo "<p>SCORE GLOBAL : " . $dataDept['SCORE_GLOBAL'] . "</p>";
 							$_SESSION["ACCES_INFORMATION_Dep"] =  $dataDept['ACCES_INFORMATION'];
+							$_SESSION["ACCES_INTERFACES_NUMERIQUES_Dep"] =  $dataDept['ACCES_INTERFACES_NUMERIQUES'];
+							$_SESSION["COMPETENCES_ADMINISTRATIVES_Dep"] =  $dataDept['COMPETENCES_ADMINISTRATIVES'];
+							$_SESSION["COMPETENCES_SCOLAIRES_Dep"] =  $dataDept['COMPETENCES_SCOLAIRES'];
+							$_SESSION["GLOBAL_ACCES_Dep"] =  $dataDept['GLOBAL_ACCES'];
+							$_SESSION["GLOBAL_COMPETENCES_Dep"] =  $dataDept['GLOBAL_COMPETENCES'];
+							$_SESSION["SCORE_GLOBAL_Dep"] =  $dataDept['SCORE_GLOBAL'];
 							?>
 						</div>
 						<div>
