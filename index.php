@@ -160,8 +160,8 @@
 							?>
 						</div>
 					</section>
-
-						<button onclick="<?php printPDF($dataVille, $dataDept, $dataReg) ?>">print PDF</button>
+					<div>
+						<button >print PDF</button>
 						<?php
 						function printPDF($dataVille, $dataDept, $dataReg)
 						{
@@ -176,6 +176,7 @@
 							$pdf->Output();
 						}
 						?>
+					</div>
 				</div>
 		</main>
 		<footer>
