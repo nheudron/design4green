@@ -1,5 +1,4 @@
-<?php
-define("FPDF_FONTPATH","/"); 
+<?php 
 require('fpdf/fpdf.php');
 
 $pdf = new FPDF("P","pt","A4");
