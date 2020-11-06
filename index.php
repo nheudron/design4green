@@ -173,6 +173,12 @@
 							echo "<p>Compétence Global : " . $dataReg['GLOBAL_COMPETENCES'] . "</p>";
 							echo "<p>SCORE GLOBAL : " . $dataReg['SCORE_GLOBAL'] . "</p>";
 							$_SESSION["ACCES_INFORMATION_Reg"] =  $dataReg['ACCES_INFORMATION'];
+							$_SESSION["ACCES_INTERFACES_NUMERIQUES_Reg"] =  $dataReg['ACCES_INTERFACES_NUMERIQUES'];
+							$_SESSION["COMPETENCES_ADMINISTRATIVES_Reg"] =  $dataReg['COMPETENCES_ADMINISTRATIVES'];
+							$_SESSION["COMPETENCES_SCOLAIRES_Reg"] =  $dataReg['COMPETENCES_SCOLAIRES'];
+							$_SESSION["GLOBAL_ACCES_Reg"] =  $dataReg['GLOBAL_ACCES'];
+							$_SESSION["GLOBAL_COMPETENCES_Reg"] =  $dataReg['GLOBAL_COMPETENCES'];
+							$_SESSION["SCORE_GLOBAL_Reg"] =  $dataReg['SCORE_GLOBAL'];
 							?>
 						</div>
 					</section>
