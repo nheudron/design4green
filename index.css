@@ -143,6 +143,7 @@ button {
 .resultats{
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 }
 .resultats div{
 	margin: 0 10px;
@@ -184,10 +185,10 @@ input[type=submit] {
   		height: 100px;
 	}
 	.l1 {
-  object-position: -25px; }
+  object-position: -10px; }
 
 .l2 {
-  object-position: -220px; }
+  object-position: -105px; }
 
 .l3 {
   object-position: -212px; }
