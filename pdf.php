@@ -2,11 +2,7 @@
 session_start();
 require('fpdf/fpdf.php');
 
-$nomCommune = $_SESSION["Nom_commune"];
-$complCommune = $_SESSION["Ligne_5"];
-
-if($complCommune == '') $commune = $nomCommune;
-else $commune = $complCommune;
+$ville = $_SESSION["ville"];
 
 $ACCES_INFORMATION_Ville = $_SESSION["ACCES_INFORMATION_Ville"];
 $ACCES_INTERFACES_NUMERIQUES_Ville = $_SESSION["ACCES_INTERFACES_NUMERIQUES_Ville"];
@@ -32,12 +28,12 @@ $GLOBAL_ACCES_Reg = $_SESSION["GLOBAL_ACCES_Reg"];
 $GLOBAL_COMPETENCES_Reg = $_SESSION["GLOBAL_COMPETENCES_Reg"];
 $SCORE_GLOBAL_Reg = $_SESSION["SCORE_GLOBAL_Reg"];
 
-$lineHeight = 5;
+$lineHeight = 6;
 
 $pdf = new FPDF();
 $pdf->AddPage();
 $pdf->SetFont('Arial','',12);
-$pdf->Cell(0,$lineHeight,"commune représentée : " . $commune);
+$pdf->Cell(0,$lineHeight,"commune representee : " . $ville);
 $pdf->Ln();
 $pdf->Ln();
 $pdf->Cell(0,$lineHeight,"indices de votre ville :");
